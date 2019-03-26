@@ -1,0 +1,636 @@
+Found 5 items
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 04:59 /myfile1
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 04:59 /myfile2
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 04:59 /myfile3
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 04:59 /myfile4
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:00 /myfile5
+file 4 has been put into HDFS
+file 4 has been read from HDFS for 1 time
+diff succeed!
+file 4 has been read from HDFS for 2 time
+diff succeed!
+file 4 has been read from HDFS for 3 time
+diff succeed!
+file 4 has been read from HDFS for 4 time
+diff succeed!
+file 4 has been read from HDFS for 5 time
+diff succeed!
+file 4 has been read from HDFS for 6 time
+diff succeed!
+file 4 has been read from HDFS for 7 time
+diff succeed!
+file 4 has been read from HDFS for 8 time
+diff succeed!
+file 4 has been read from HDFS for 9 time
+diff succeed!
+file 4 has been read from HDFS for 10 time
+diff succeed!
+Deleted /myfile4
+file 4 has been removed from HDFS
+Found 5 items
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:01 /myfile1
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:01 /myfile2
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:01 /myfile3
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:01 /myfile4
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:01 /myfile5
+file 4 has been put into HDFS
+file 4 has been read from HDFS for 1 time
+diff succeed!
+file 4 has been read from HDFS for 2 time
+diff succeed!
+file 4 has been read from HDFS for 3 time
+diff succeed!
+file 4 has been read from HDFS for 4 time
+diff succeed!
+file 4 has been read from HDFS for 5 time
+diff succeed!
+file 4 has been read from HDFS for 6 time
+diff succeed!
+file 4 has been read from HDFS for 7 time
+diff succeed!
+file 4 has been read from HDFS for 8 time
+diff succeed!
+file 4 has been read from HDFS for 9 time
+diff succeed!
+file 4 has been read from HDFS for 10 time
+diff succeed!
+Deleted /myfile4
+file 4 has been removed from HDFS
+2019-03-25 05:03:40,065 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.StandbyException): Operation category READ is not supported in state standby. Visit https://s.apache.org/sbnn-error
+	at org.apache.hadoop.hdfs.server.namenode.ha.StandbyState.checkOperation(StandbyState.java:88)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode$NameNodeHAContext.checkOperation(NameNode.java:1952)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkOperation(FSNamesystem.java:1423)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getAdditionalBlock(FSNamesystem.java:2674)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.addBlock(NameNodeRpcServer.java:875)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.addBlock(ClientNamenodeProtocolServerSideTranslatorPB.java:561)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+, while invoking ClientNamenodeProtocolTranslatorPB.addBlock over node-1-link-0/10.10.1.4:8020. Trying to failover immediately.
+Found 5 items
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:03 /myfile1
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:03 /myfile2
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:03 /myfile3
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:03 /myfile4
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:03 /myfile5
+file 4 has been put into HDFS
+file 4 has been read from HDFS for 1 time
+diff succeed!
+file 4 has been read from HDFS for 2 time
+diff succeed!
+file 4 has been read from HDFS for 3 time
+diff succeed!
+file 4 has been read from HDFS for 4 time
+diff succeed!
+file 4 has been read from HDFS for 5 time
+diff succeed!
+file 4 has been read from HDFS for 6 time
+diff succeed!
+2019-03-25 05:04:56,057 WARN  impl.BlockReaderFactory BlockReaderFactory.java:getRemoteBlockReaderFromTcp:764 - I/O error constructing remote block reader.
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:531)
+	at org.apache.hadoop.hdfs.DFSClient.newConnectedPeer(DFSClient.java:2924)
+	at org.apache.hadoop.hdfs.client.impl.BlockReaderFactory.nextTcpPeer(BlockReaderFactory.java:821)
+	at org.apache.hadoop.hdfs.client.impl.BlockReaderFactory.getRemoteBlockReaderFromTcp(BlockReaderFactory.java:746)
+	at org.apache.hadoop.hdfs.client.impl.BlockReaderFactory.build(BlockReaderFactory.java:379)
+	at org.apache.hadoop.hdfs.DFSInputStream.getBlockReader(DFSInputStream.java:641)
+	at org.apache.hadoop.hdfs.DFSInputStream.blockSeekTo(DFSInputStream.java:572)
+	at org.apache.hadoop.hdfs.DFSInputStream.readWithStrategy(DFSInputStream.java:754)
+	at org.apache.hadoop.hdfs.DFSInputStream.read(DFSInputStream.java:820)
+	at java.io.DataInputStream.read(DataInputStream.java:100)
+	at org.apache.hadoop.io.IOUtils.copyBytes(IOUtils.java:100)
+	at org.apache.hadoop.io.IOUtils.copyBytes(IOUtils.java:68)
+	at org.apache.hadoop.io.IOUtils.copyBytes(IOUtils.java:129)
+	at org.apache.hadoop.fs.shell.CommandWithDestination$TargetFileSystem.writeStreamToFile(CommandWithDestination.java:485)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.copyStreamToTarget(CommandWithDestination.java:407)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.copyFileToTarget(CommandWithDestination.java:342)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.processPath(CommandWithDestination.java:277)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.processPath(CommandWithDestination.java:262)
+	at org.apache.hadoop.fs.shell.Command.processPaths(Command.java:331)
+	at org.apache.hadoop.fs.shell.Command.processPathArgument(Command.java:303)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.processPathArgument(CommandWithDestination.java:257)
+	at org.apache.hadoop.fs.shell.Command.processArgument(Command.java:285)
+	at org.apache.hadoop.fs.shell.Command.processArguments(Command.java:269)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.processArguments(CommandWithDestination.java:228)
+	at org.apache.hadoop.fs.shell.FsCommand.processRawArguments(FsCommand.java:120)
+	at org.apache.hadoop.fs.shell.Command.run(Command.java:176)
+	at org.apache.hadoop.fs.FsShell.run(FsShell.java:328)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:76)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:90)
+	at org.apache.hadoop.fs.FsShell.main(FsShell.java:391)
+2019-03-25 05:04:56,070 WARN  hdfs.DFSClient DFSInputStream.java:blockSeekTo:594 - Failed to connect to /10.10.1.6:9866 for block BP-1608182229-130.127.133.65-1553511553267:blk_1073741944_1120, add to deadNodes and continue. 
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:531)
+	at org.apache.hadoop.hdfs.DFSClient.newConnectedPeer(DFSClient.java:2924)
+	at org.apache.hadoop.hdfs.client.impl.BlockReaderFactory.nextTcpPeer(BlockReaderFactory.java:821)
+	at org.apache.hadoop.hdfs.client.impl.BlockReaderFactory.getRemoteBlockReaderFromTcp(BlockReaderFactory.java:746)
+	at org.apache.hadoop.hdfs.client.impl.BlockReaderFactory.build(BlockReaderFactory.java:379)
+	at org.apache.hadoop.hdfs.DFSInputStream.getBlockReader(DFSInputStream.java:641)
+	at org.apache.hadoop.hdfs.DFSInputStream.blockSeekTo(DFSInputStream.java:572)
+	at org.apache.hadoop.hdfs.DFSInputStream.readWithStrategy(DFSInputStream.java:754)
+	at org.apache.hadoop.hdfs.DFSInputStream.read(DFSInputStream.java:820)
+	at java.io.DataInputStream.read(DataInputStream.java:100)
+	at org.apache.hadoop.io.IOUtils.copyBytes(IOUtils.java:100)
+	at org.apache.hadoop.io.IOUtils.copyBytes(IOUtils.java:68)
+	at org.apache.hadoop.io.IOUtils.copyBytes(IOUtils.java:129)
+	at org.apache.hadoop.fs.shell.CommandWithDestination$TargetFileSystem.writeStreamToFile(CommandWithDestination.java:485)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.copyStreamToTarget(CommandWithDestination.java:407)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.copyFileToTarget(CommandWithDestination.java:342)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.processPath(CommandWithDestination.java:277)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.processPath(CommandWithDestination.java:262)
+	at org.apache.hadoop.fs.shell.Command.processPaths(Command.java:331)
+	at org.apache.hadoop.fs.shell.Command.processPathArgument(Command.java:303)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.processPathArgument(CommandWithDestination.java:257)
+	at org.apache.hadoop.fs.shell.Command.processArgument(Command.java:285)
+	at org.apache.hadoop.fs.shell.Command.processArguments(Command.java:269)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.processArguments(CommandWithDestination.java:228)
+	at org.apache.hadoop.fs.shell.FsCommand.processRawArguments(FsCommand.java:120)
+	at org.apache.hadoop.fs.shell.Command.run(Command.java:176)
+	at org.apache.hadoop.fs.FsShell.run(FsShell.java:328)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:76)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:90)
+	at org.apache.hadoop.fs.FsShell.main(FsShell.java:391)
+2019-03-25 05:04:56,073 INFO  hdfs.DFSClient DFSInputStream.java:blockSeekTo:576 - Successfully connected to /10.10.1.2:9866 for BP-1608182229-130.127.133.65-1553511553267:blk_1073741944_1120
+file 4 has been read from HDFS for 7 time
+diff succeed!
+file 4 has been read from HDFS for 8 time
+diff succeed!
+file 4 has been read from HDFS for 9 time
+diff succeed!
+file 4 has been read from HDFS for 10 time
+diff succeed!
+Deleted /myfile4
+file 4 has been removed from HDFS
+Found 5 items
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:04 /myfile1
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:05 /myfile2
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:05 /myfile3
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:05 /myfile4
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:04 /myfile5
+file 4 has been put into HDFS
+file 4 has been read from HDFS for 1 time
+diff succeed!
+file 4 has been read from HDFS for 2 time
+diff succeed!
+file 4 has been read from HDFS for 3 time
+diff succeed!
+file 4 has been read from HDFS for 4 time
+diff succeed!
+file 4 has been read from HDFS for 5 time
+diff succeed!
+file 4 has been read from HDFS for 6 time
+diff succeed!
+file 4 has been read from HDFS for 7 time
+diff succeed!
+file 4 has been read from HDFS for 8 time
+diff succeed!
+file 4 has been read from HDFS for 9 time
+diff succeed!
+file 4 has been read from HDFS for 10 time
+diff succeed!
+Deleted /myfile4
+file 4 has been removed from HDFS
+Found 5 items
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:06 /myfile1
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:07 /myfile2
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:07 /myfile3
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:07 /myfile4
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:06 /myfile5
+file 4 has been put into HDFS
+file 4 has been read from HDFS for 1 time
+diff succeed!
+file 4 has been read from HDFS for 2 time
+diff succeed!
+file 4 has been read from HDFS for 3 time
+diff succeed!
+file 4 has been read from HDFS for 4 time
+diff succeed!
+file 4 has been read from HDFS for 5 time
+diff succeed!
+file 4 has been read from HDFS for 6 time
+diff succeed!
+file 4 has been read from HDFS for 7 time
+diff succeed!
+file 4 has been read from HDFS for 8 time
+diff succeed!
+file 4 has been read from HDFS for 9 time
+diff succeed!
+file 4 has been read from HDFS for 10 time
+diff succeed!
+Deleted /myfile4
+file 4 has been removed from HDFS
+Found 5 items
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:08 /myfile1
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:09 /myfile2
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:09 /myfile3
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:09 /myfile4
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:08 /myfile5
+file 4 has been put into HDFS
+file 4 has been read from HDFS for 1 time
+diff succeed!
+file 4 has been read from HDFS for 2 time
+diff succeed!
+file 4 has been read from HDFS for 3 time
+diff succeed!
+2019-03-25 05:10:00,758 WARN  impl.BlockReaderFactory BlockReaderFactory.java:getRemoteBlockReaderFromTcp:764 - I/O error constructing remote block reader.
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:531)
+	at org.apache.hadoop.hdfs.DFSClient.newConnectedPeer(DFSClient.java:2924)
+	at org.apache.hadoop.hdfs.client.impl.BlockReaderFactory.nextTcpPeer(BlockReaderFactory.java:821)
+	at org.apache.hadoop.hdfs.client.impl.BlockReaderFactory.getRemoteBlockReaderFromTcp(BlockReaderFactory.java:746)
+	at org.apache.hadoop.hdfs.client.impl.BlockReaderFactory.build(BlockReaderFactory.java:379)
+	at org.apache.hadoop.hdfs.DFSInputStream.getBlockReader(DFSInputStream.java:641)
+	at org.apache.hadoop.hdfs.DFSInputStream.blockSeekTo(DFSInputStream.java:572)
+	at org.apache.hadoop.hdfs.DFSInputStream.readWithStrategy(DFSInputStream.java:754)
+	at org.apache.hadoop.hdfs.DFSInputStream.read(DFSInputStream.java:820)
+	at java.io.DataInputStream.read(DataInputStream.java:100)
+	at org.apache.hadoop.io.IOUtils.copyBytes(IOUtils.java:100)
+	at org.apache.hadoop.io.IOUtils.copyBytes(IOUtils.java:68)
+	at org.apache.hadoop.io.IOUtils.copyBytes(IOUtils.java:129)
+	at org.apache.hadoop.fs.shell.CommandWithDestination$TargetFileSystem.writeStreamToFile(CommandWithDestination.java:485)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.copyStreamToTarget(CommandWithDestination.java:407)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.copyFileToTarget(CommandWithDestination.java:342)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.processPath(CommandWithDestination.java:277)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.processPath(CommandWithDestination.java:262)
+	at org.apache.hadoop.fs.shell.Command.processPaths(Command.java:331)
+	at org.apache.hadoop.fs.shell.Command.processPathArgument(Command.java:303)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.processPathArgument(CommandWithDestination.java:257)
+	at org.apache.hadoop.fs.shell.Command.processArgument(Command.java:285)
+	at org.apache.hadoop.fs.shell.Command.processArguments(Command.java:269)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.processArguments(CommandWithDestination.java:228)
+	at org.apache.hadoop.fs.shell.FsCommand.processRawArguments(FsCommand.java:120)
+	at org.apache.hadoop.fs.shell.Command.run(Command.java:176)
+	at org.apache.hadoop.fs.FsShell.run(FsShell.java:328)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:76)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:90)
+	at org.apache.hadoop.fs.FsShell.main(FsShell.java:391)
+2019-03-25 05:10:00,767 WARN  hdfs.DFSClient DFSInputStream.java:blockSeekTo:594 - Failed to connect to /10.10.1.6:9866 for block BP-1608182229-130.127.133.65-1553511553267:blk_1073742045_1221, add to deadNodes and continue. 
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:531)
+	at org.apache.hadoop.hdfs.DFSClient.newConnectedPeer(DFSClient.java:2924)
+	at org.apache.hadoop.hdfs.client.impl.BlockReaderFactory.nextTcpPeer(BlockReaderFactory.java:821)
+	at org.apache.hadoop.hdfs.client.impl.BlockReaderFactory.getRemoteBlockReaderFromTcp(BlockReaderFactory.java:746)
+	at org.apache.hadoop.hdfs.client.impl.BlockReaderFactory.build(BlockReaderFactory.java:379)
+	at org.apache.hadoop.hdfs.DFSInputStream.getBlockReader(DFSInputStream.java:641)
+	at org.apache.hadoop.hdfs.DFSInputStream.blockSeekTo(DFSInputStream.java:572)
+	at org.apache.hadoop.hdfs.DFSInputStream.readWithStrategy(DFSInputStream.java:754)
+	at org.apache.hadoop.hdfs.DFSInputStream.read(DFSInputStream.java:820)
+	at java.io.DataInputStream.read(DataInputStream.java:100)
+	at org.apache.hadoop.io.IOUtils.copyBytes(IOUtils.java:100)
+	at org.apache.hadoop.io.IOUtils.copyBytes(IOUtils.java:68)
+	at org.apache.hadoop.io.IOUtils.copyBytes(IOUtils.java:129)
+	at org.apache.hadoop.fs.shell.CommandWithDestination$TargetFileSystem.writeStreamToFile(CommandWithDestination.java:485)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.copyStreamToTarget(CommandWithDestination.java:407)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.copyFileToTarget(CommandWithDestination.java:342)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.processPath(CommandWithDestination.java:277)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.processPath(CommandWithDestination.java:262)
+	at org.apache.hadoop.fs.shell.Command.processPaths(Command.java:331)
+	at org.apache.hadoop.fs.shell.Command.processPathArgument(Command.java:303)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.processPathArgument(CommandWithDestination.java:257)
+	at org.apache.hadoop.fs.shell.Command.processArgument(Command.java:285)
+	at org.apache.hadoop.fs.shell.Command.processArguments(Command.java:269)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.processArguments(CommandWithDestination.java:228)
+	at org.apache.hadoop.fs.shell.FsCommand.processRawArguments(FsCommand.java:120)
+	at org.apache.hadoop.fs.shell.Command.run(Command.java:176)
+	at org.apache.hadoop.fs.FsShell.run(FsShell.java:328)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:76)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:90)
+	at org.apache.hadoop.fs.FsShell.main(FsShell.java:391)
+2019-03-25 05:10:00,774 INFO  hdfs.DFSClient DFSInputStream.java:blockSeekTo:576 - Successfully connected to /10.10.1.3:9866 for BP-1608182229-130.127.133.65-1553511553267:blk_1073742045_1221
+file 4 has been read from HDFS for 4 time
+diff succeed!
+file 4 has been read from HDFS for 5 time
+diff succeed!
+file 4 has been read from HDFS for 6 time
+diff succeed!
+file 4 has been read from HDFS for 7 time
+diff succeed!
+file 4 has been read from HDFS for 8 time
+diff succeed!
+file 4 has been read from HDFS for 9 time
+diff succeed!
+file 4 has been read from HDFS for 10 time
+diff succeed!
+Deleted /myfile4
+file 4 has been removed from HDFS
+Found 5 items
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:10 /myfile1
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:11 /myfile2
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:10 /myfile3
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:11 /myfile4
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:09 /myfile5
+file 4 has been put into HDFS
+file 4 has been read from HDFS for 1 time
+diff succeed!
+file 4 has been read from HDFS for 2 time
+diff succeed!
+file 4 has been read from HDFS for 3 time
+diff succeed!
+file 4 has been read from HDFS for 4 time
+diff succeed!
+file 4 has been read from HDFS for 5 time
+diff succeed!
+file 4 has been read from HDFS for 6 time
+diff succeed!
+file 4 has been read from HDFS for 7 time
+diff succeed!
+file 4 has been read from HDFS for 8 time
+diff succeed!
+file 4 has been read from HDFS for 9 time
+diff succeed!
+file 4 has been read from HDFS for 10 time
+diff succeed!
+Deleted /myfile4
+file 4 has been removed from HDFS
+Found 5 items
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:11 /myfile1
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:12 /myfile2
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:12 /myfile3
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:12 /myfile4
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:11 /myfile5
+file 4 has been put into HDFS
+file 4 has been read from HDFS for 1 time
+diff succeed!
+file 4 has been read from HDFS for 2 time
+diff succeed!
+file 4 has been read from HDFS for 3 time
+diff succeed!
+file 4 has been read from HDFS for 4 time
+diff succeed!
+file 4 has been read from HDFS for 5 time
+diff succeed!
+file 4 has been read from HDFS for 6 time
+diff succeed!
+file 4 has been read from HDFS for 7 time
+diff succeed!
+file 4 has been read from HDFS for 8 time
+diff succeed!
+file 4 has been read from HDFS for 9 time
+diff succeed!
+file 4 has been read from HDFS for 10 time
+diff succeed!
+Deleted /myfile4
+file 4 has been removed from HDFS
+Found 5 items
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:13 /myfile1
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:14 /myfile2
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:14 /myfile3
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:14 /myfile4
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:13 /myfile5
+file 4 has been put into HDFS
+file 4 has been read from HDFS for 1 time
+diff succeed!
+file 4 has been read from HDFS for 2 time
+diff succeed!
+file 4 has been read from HDFS for 3 time
+diff succeed!
+file 4 has been read from HDFS for 4 time
+diff succeed!
+file 4 has been read from HDFS for 5 time
+diff succeed!
+file 4 has been read from HDFS for 6 time
+diff succeed!
+file 4 has been read from HDFS for 7 time
+diff succeed!
+file 4 has been read from HDFS for 8 time
+diff succeed!
+file 4 has been read from HDFS for 9 time
+diff succeed!
+file 4 has been read from HDFS for 10 time
+diff succeed!
+Deleted /myfile4
+file 4 has been removed from HDFS
+Found 5 items
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:15 /myfile1
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:14 /myfile2
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:14 /myfile3
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:16 /myfile4
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:15 /myfile5
+file 4 has been put into HDFS
+file 4 has been read from HDFS for 1 time
+diff succeed!
+file 4 has been read from HDFS for 2 time
+diff succeed!
+file 4 has been read from HDFS for 3 time
+diff succeed!
+file 4 has been read from HDFS for 4 time
+diff succeed!
+file 4 has been read from HDFS for 5 time
+diff succeed!
+file 4 has been read from HDFS for 6 time
+diff succeed!
+file 4 has been read from HDFS for 7 time
+diff succeed!
+file 4 has been read from HDFS for 8 time
+diff succeed!
+file 4 has been read from HDFS for 9 time
+diff succeed!
+file 4 has been read from HDFS for 10 time
+diff succeed!
+Deleted /myfile4
+file 4 has been removed from HDFS
+Found 5 items
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:17 /myfile1
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:16 /myfile2
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:16 /myfile3
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:17 /myfile4
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:17 /myfile5
+file 4 has been put into HDFS
+file 4 has been read from HDFS for 1 time
+diff succeed!
+file 4 has been read from HDFS for 2 time
+diff succeed!
+file 4 has been read from HDFS for 3 time
+diff succeed!
+file 4 has been read from HDFS for 4 time
+diff succeed!
+file 4 has been read from HDFS for 5 time
+diff succeed!
+file 4 has been read from HDFS for 6 time
+diff succeed!
+file 4 has been read from HDFS for 7 time
+diff succeed!
+file 4 has been read from HDFS for 8 time
+diff succeed!
+file 4 has been read from HDFS for 9 time
+diff succeed!
+file 4 has been read from HDFS for 10 time
+diff succeed!
+Deleted /myfile4
+file 4 has been removed from HDFS
+Found 5 items
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:18 /myfile1
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:18 /myfile2
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:18 /myfile3
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:19 /myfile4
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:19 /myfile5
+file 4 has been put into HDFS
+file 4 has been read from HDFS for 1 time
+diff succeed!
+2019-03-25 05:20:08,699 WARN  impl.BlockReaderFactory BlockReaderFactory.java:getRemoteBlockReaderFromTcp:764 - I/O error constructing remote block reader.
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:531)
+	at org.apache.hadoop.hdfs.DFSClient.newConnectedPeer(DFSClient.java:2924)
+	at org.apache.hadoop.hdfs.client.impl.BlockReaderFactory.nextTcpPeer(BlockReaderFactory.java:821)
+	at org.apache.hadoop.hdfs.client.impl.BlockReaderFactory.getRemoteBlockReaderFromTcp(BlockReaderFactory.java:746)
+	at org.apache.hadoop.hdfs.client.impl.BlockReaderFactory.build(BlockReaderFactory.java:379)
+	at org.apache.hadoop.hdfs.DFSInputStream.getBlockReader(DFSInputStream.java:641)
+	at org.apache.hadoop.hdfs.DFSInputStream.blockSeekTo(DFSInputStream.java:572)
+	at org.apache.hadoop.hdfs.DFSInputStream.readWithStrategy(DFSInputStream.java:754)
+	at org.apache.hadoop.hdfs.DFSInputStream.read(DFSInputStream.java:820)
+	at java.io.DataInputStream.read(DataInputStream.java:100)
+	at org.apache.hadoop.io.IOUtils.copyBytes(IOUtils.java:94)
+	at org.apache.hadoop.io.IOUtils.copyBytes(IOUtils.java:68)
+	at org.apache.hadoop.io.IOUtils.copyBytes(IOUtils.java:129)
+	at org.apache.hadoop.fs.shell.CommandWithDestination$TargetFileSystem.writeStreamToFile(CommandWithDestination.java:485)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.copyStreamToTarget(CommandWithDestination.java:407)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.copyFileToTarget(CommandWithDestination.java:342)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.processPath(CommandWithDestination.java:277)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.processPath(CommandWithDestination.java:262)
+	at org.apache.hadoop.fs.shell.Command.processPaths(Command.java:331)
+	at org.apache.hadoop.fs.shell.Command.processPathArgument(Command.java:303)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.processPathArgument(CommandWithDestination.java:257)
+	at org.apache.hadoop.fs.shell.Command.processArgument(Command.java:285)
+	at org.apache.hadoop.fs.shell.Command.processArguments(Command.java:269)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.processArguments(CommandWithDestination.java:228)
+	at org.apache.hadoop.fs.shell.FsCommand.processRawArguments(FsCommand.java:120)
+	at org.apache.hadoop.fs.shell.Command.run(Command.java:176)
+	at org.apache.hadoop.fs.FsShell.run(FsShell.java:328)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:76)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:90)
+	at org.apache.hadoop.fs.FsShell.main(FsShell.java:391)
+2019-03-25 05:20:08,708 WARN  hdfs.DFSClient DFSInputStream.java:blockSeekTo:594 - Failed to connect to /10.10.1.6:9866 for block BP-1608182229-130.127.133.65-1553511553267:blk_1073742283_1461, add to deadNodes and continue. 
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:531)
+	at org.apache.hadoop.hdfs.DFSClient.newConnectedPeer(DFSClient.java:2924)
+	at org.apache.hadoop.hdfs.client.impl.BlockReaderFactory.nextTcpPeer(BlockReaderFactory.java:821)
+	at org.apache.hadoop.hdfs.client.impl.BlockReaderFactory.getRemoteBlockReaderFromTcp(BlockReaderFactory.java:746)
+	at org.apache.hadoop.hdfs.client.impl.BlockReaderFactory.build(BlockReaderFactory.java:379)
+	at org.apache.hadoop.hdfs.DFSInputStream.getBlockReader(DFSInputStream.java:641)
+	at org.apache.hadoop.hdfs.DFSInputStream.blockSeekTo(DFSInputStream.java:572)
+	at org.apache.hadoop.hdfs.DFSInputStream.readWithStrategy(DFSInputStream.java:754)
+	at org.apache.hadoop.hdfs.DFSInputStream.read(DFSInputStream.java:820)
+	at java.io.DataInputStream.read(DataInputStream.java:100)
+	at org.apache.hadoop.io.IOUtils.copyBytes(IOUtils.java:94)
+	at org.apache.hadoop.io.IOUtils.copyBytes(IOUtils.java:68)
+	at org.apache.hadoop.io.IOUtils.copyBytes(IOUtils.java:129)
+	at org.apache.hadoop.fs.shell.CommandWithDestination$TargetFileSystem.writeStreamToFile(CommandWithDestination.java:485)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.copyStreamToTarget(CommandWithDestination.java:407)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.copyFileToTarget(CommandWithDestination.java:342)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.processPath(CommandWithDestination.java:277)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.processPath(CommandWithDestination.java:262)
+	at org.apache.hadoop.fs.shell.Command.processPaths(Command.java:331)
+	at org.apache.hadoop.fs.shell.Command.processPathArgument(Command.java:303)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.processPathArgument(CommandWithDestination.java:257)
+	at org.apache.hadoop.fs.shell.Command.processArgument(Command.java:285)
+	at org.apache.hadoop.fs.shell.Command.processArguments(Command.java:269)
+	at org.apache.hadoop.fs.shell.CommandWithDestination.processArguments(CommandWithDestination.java:228)
+	at org.apache.hadoop.fs.shell.FsCommand.processRawArguments(FsCommand.java:120)
+	at org.apache.hadoop.fs.shell.Command.run(Command.java:176)
+	at org.apache.hadoop.fs.FsShell.run(FsShell.java:328)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:76)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:90)
+	at org.apache.hadoop.fs.FsShell.main(FsShell.java:391)
+2019-03-25 05:20:08,789 INFO  hdfs.DFSClient DFSInputStream.java:blockSeekTo:576 - Successfully connected to /10.10.1.2:9866 for BP-1608182229-130.127.133.65-1553511553267:blk_1073742283_1461
+file 4 has been read from HDFS for 2 time
+diff succeed!
+file 4 has been read from HDFS for 3 time
+diff succeed!
+file 4 has been read from HDFS for 4 time
+diff succeed!
+file 4 has been read from HDFS for 5 time
+diff succeed!
+file 4 has been read from HDFS for 6 time
+diff succeed!
+file 4 has been read from HDFS for 7 time
+diff succeed!
+file 4 has been read from HDFS for 8 time
+diff succeed!
+file 4 has been read from HDFS for 9 time
+diff succeed!
+file 4 has been read from HDFS for 10 time
+diff succeed!
+Deleted /myfile4
+file 4 has been removed from HDFS
+Found 5 items
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:20 /myfile1
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:20 /myfile2
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:20 /myfile3
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:21 /myfile4
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:21 /myfile5
+file 4 has been put into HDFS
+file 4 has been read from HDFS for 1 time
+diff succeed!
+file 4 has been read from HDFS for 2 time
+diff succeed!
+file 4 has been read from HDFS for 3 time
+diff succeed!
+file 4 has been read from HDFS for 4 time
+diff succeed!
+file 4 has been read from HDFS for 5 time
+diff succeed!
+file 4 has been read from HDFS for 6 time
+diff succeed!
+file 4 has been read from HDFS for 7 time
+diff succeed!
+file 4 has been read from HDFS for 8 time
+diff succeed!
+file 4 has been read from HDFS for 9 time
+diff succeed!
+file 4 has been read from HDFS for 10 time
+diff succeed!
+Deleted /myfile4
+file 4 has been removed from HDFS
+Found 5 items
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:21 /myfile1
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:21 /myfile2
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:22 /myfile3
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:23 /myfile4
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 05:23 /myfile5
+file 4 has been put into HDFS
+file 4 has been read from HDFS for 1 time
+diff succeed!
+file 4 has been read from HDFS for 2 time
+diff succeed!
+file 4 has been read from HDFS for 3 time
+diff succeed!
+file 4 has been read from HDFS for 4 time
+diff succeed!
+file 4 has been read from HDFS for 5 time
+diff succeed!
+file 4 has been read from HDFS for 6 time
+diff succeed!
+file 4 has been read from HDFS for 7 time
+diff succeed!
+file 4 has been read from HDFS for 8 time
+diff succeed!
+file 4 has been read from HDFS for 9 time
+diff succeed!
+file 4 has been read from HDFS for 10 time
+diff succeed!
+Deleted /myfile4
+file 4 has been removed from HDFS

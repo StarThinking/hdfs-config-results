@@ -1,0 +1,22 @@
+2019-03-25 19:58:01,814 WARN  hdfs.DataStreamer DataStreamer.java:run:1196 - Exception for BP-1644157955-130.127.133.65-1553565408254:blk_1073741828_1004
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.apache.hadoop.net.SocketInputStream$Reader.performIO(SocketInputStream.java:57)
+	at org.apache.hadoop.net.SocketIOWithTimeout.doIO(SocketIOWithTimeout.java:142)
+	at org.apache.hadoop.net.SocketInputStream.read(SocketInputStream.java:161)
+	at org.apache.hadoop.net.SocketInputStream.read(SocketInputStream.java:131)
+	at org.apache.hadoop.net.SocketInputStream.read(SocketInputStream.java:118)
+	at java.io.FilterInputStream.read(FilterInputStream.java:83)
+	at java.io.FilterInputStream.read(FilterInputStream.java:83)
+	at org.apache.hadoop.hdfs.protocolPB.PBHelperClient.vintPrefixed(PBHelperClient.java:547)
+	at org.apache.hadoop.hdfs.protocol.datatransfer.PipelineAck.readFields(PipelineAck.java:213)
+	at org.apache.hadoop.hdfs.DataStreamer$ResponseProcessor.run(DataStreamer.java:1086)
+2019-03-25 19:58:01,826 WARN  hdfs.DataStreamer DataStreamer.java:handleBadDatanode:1571 - Error Recovery for BP-1644157955-130.127.133.65-1553565408254:blk_1073741828_1004 in pipeline [DatanodeInfoWithStorage[10.10.1.6:9866,DS-8e69c71d-ebd6-4483-a1e5-755a824a19b5,DISK], DatanodeInfoWithStorage[10.10.1.2:9866,DS-df0db7d3-53ce-4252-b6f7-5da5a53ed07d,DISK], DatanodeInfoWithStorage[10.10.1.5:9866,DS-4b554fe4-34d8-4afa-9ffe-c20a3a7cf41e,DISK]]: datanode 0(DatanodeInfoWithStorage[10.10.1.6:9866,DS-8e69c71d-ebd6-4483-a1e5-755a824a19b5,DISK]) is bad.
+2019-03-25 19:58:36,686 WARN  hdfs.DataStreamer DataStreamer.java:run:1196 - Exception for BP-1644157955-130.127.133.65-1553565408254:blk_1073741832_1012
+java.io.IOException: Bad response ERROR for BP-1644157955-130.127.133.65-1553565408254:blk_1073741832_1012 from datanode DatanodeInfoWithStorage[10.10.1.6:9866,DS-8e69c71d-ebd6-4483-a1e5-755a824a19b5,DISK]
+	at org.apache.hadoop.hdfs.DataStreamer$ResponseProcessor.run(DataStreamer.java:1126)
+2019-03-25 19:58:36,688 WARN  hdfs.DataStreamer DataStreamer.java:handleBadDatanode:1571 - Error Recovery for BP-1644157955-130.127.133.65-1553565408254:blk_1073741832_1012 in pipeline [DatanodeInfoWithStorage[10.10.1.3:9866,DS-6e603087-b9a0-4dab-85fe-e4ee14bf6841,DISK], DatanodeInfoWithStorage[10.10.1.6:9866,DS-8e69c71d-ebd6-4483-a1e5-755a824a19b5,DISK], DatanodeInfoWithStorage[10.10.1.5:9866,DS-4b554fe4-34d8-4afa-9ffe-c20a3a7cf41e,DISK]]: datanode 1(DatanodeInfoWithStorage[10.10.1.6:9866,DS-8e69c71d-ebd6-4483-a1e5-755a824a19b5,DISK]) is bad.
