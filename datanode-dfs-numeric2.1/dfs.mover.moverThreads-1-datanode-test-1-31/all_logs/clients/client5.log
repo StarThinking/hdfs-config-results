@@ -1,0 +1,31 @@
+2019-03-26 02:17:58,246 WARN  hdfs.DataStreamer DataStreamer.java:run:1196 - Exception for BP-1318893744-130.127.133.21-1553588197382:blk_1073741863_1039
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.apache.hadoop.net.SocketInputStream$Reader.performIO(SocketInputStream.java:57)
+	at org.apache.hadoop.net.SocketIOWithTimeout.doIO(SocketIOWithTimeout.java:142)
+	at org.apache.hadoop.net.SocketInputStream.read(SocketInputStream.java:161)
+	at org.apache.hadoop.net.SocketInputStream.read(SocketInputStream.java:131)
+	at org.apache.hadoop.net.SocketInputStream.read(SocketInputStream.java:118)
+	at java.io.FilterInputStream.read(FilterInputStream.java:83)
+	at java.io.FilterInputStream.read(FilterInputStream.java:83)
+	at org.apache.hadoop.hdfs.protocolPB.PBHelperClient.vintPrefixed(PBHelperClient.java:547)
+	at org.apache.hadoop.hdfs.protocol.datatransfer.PipelineAck.readFields(PipelineAck.java:213)
+	at org.apache.hadoop.hdfs.DataStreamer$ResponseProcessor.run(DataStreamer.java:1086)
+2019-03-26 02:17:58,251 WARN  hdfs.DataStreamer DataStreamer.java:handleBadDatanode:1571 - Error Recovery for BP-1318893744-130.127.133.21-1553588197382:blk_1073741863_1039 in pipeline [DatanodeInfoWithStorage[10.10.1.6:9866,DS-db162fee-ed80-41c3-87d7-9017e6c103cd,DISK], DatanodeInfoWithStorage[10.10.1.5:9866,DS-660f0c66-cb53-45e5-bfaa-d52f619c9bbc,DISK], DatanodeInfoWithStorage[10.10.1.3:9866,DS-bc6b00a6-e98e-474b-b6b1-ffd077c4c502,DISK]]: datanode 0(DatanodeInfoWithStorage[10.10.1.6:9866,DS-db162fee-ed80-41c3-87d7-9017e6c103cd,DISK]) is bad.
+Found 5 items
+-rw-r--r--   3 root supergroup 1073741824 2019-03-26 02:17 /myfile1
+-rw-r--r--   3 root supergroup 1073741824 2019-03-26 02:18 /myfile2
+-rw-r--r--   3 root supergroup 1073741824 2019-03-26 02:17 /myfile3
+-rw-r--r--   3 root supergroup 1073741824 2019-03-26 02:18 /myfile4
+-rw-r--r--   3 root supergroup 1073741824 2019-03-26 02:18 /myfile5
+file 5 has been put into HDFS
+file 5 has been read from HDFS for 1 time
+diff succeed!
+file 5 has been read from HDFS for 2 time
+diff succeed!
+file 5 has been read from HDFS for 3 time
+diff succeed!
