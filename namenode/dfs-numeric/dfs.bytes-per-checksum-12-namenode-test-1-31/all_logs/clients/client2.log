@@ -1,0 +1,493 @@
+-put: Invalid values: dfs.bytes-per-checksum (=12) must divide block size (=134217728).
+Usage: hadoop fs [generic options]
+	[-appendToFile <localsrc> ... <dst>]
+	[-cat [-ignoreCrc] <src> ...]
+	[-checksum <src> ...]
+	[-chgrp [-R] GROUP PATH...]
+	[-chmod [-R] <MODE[,MODE]... | OCTALMODE> PATH...]
+	[-chown [-R] [OWNER][:[GROUP]] PATH...]
+	[-copyFromLocal [-f] [-p] [-l] [-d] [-t <thread count>] <localsrc> ... <dst>]
+	[-copyToLocal [-f] [-p] [-ignoreCrc] [-crc] <src> ... <localdst>]
+	[-count [-q] [-h] [-v] [-t [<storage type>]] [-u] [-x] [-e] <path> ...]
+	[-cp [-f] [-p | -p[topax]] [-d] <src> ... <dst>]
+	[-createSnapshot <snapshotDir> [<snapshotName>]]
+	[-deleteSnapshot <snapshotDir> <snapshotName>]
+	[-df [-h] [<path> ...]]
+	[-du [-s] [-h] [-v] [-x] <path> ...]
+	[-expunge]
+	[-find <path> ... <expression> ...]
+	[-get [-f] [-p] [-ignoreCrc] [-crc] <src> ... <localdst>]
+	[-getfacl [-R] <path>]
+	[-getfattr [-R] {-n name | -d} [-e en] <path>]
+	[-getmerge [-nl] [-skip-empty-file] <src> <localdst>]
+	[-head <file>]
+	[-help [cmd ...]]
+	[-ls [-C] [-d] [-h] [-q] [-R] [-t] [-S] [-r] [-u] [-e] [<path> ...]]
+	[-mkdir [-p] <path> ...]
+	[-moveFromLocal <localsrc> ... <dst>]
+	[-moveToLocal <src> <localdst>]
+	[-mv <src> ... <dst>]
+	[-put [-f] [-p] [-l] [-d] <localsrc> ... <dst>]
+	[-renameSnapshot <snapshotDir> <oldName> <newName>]
+	[-rm [-f] [-r|-R] [-skipTrash] [-safely] <src> ...]
+	[-rmdir [--ignore-fail-on-non-empty] <dir> ...]
+	[-setfacl [-R] [{-b|-k} {-m|-x <acl_spec>} <path>]|[--set <acl_spec> <path>]]
+	[-setfattr {-n name [-v value] | -x name} <path>]
+	[-setrep [-R] [-w] <rep> <path> ...]
+	[-stat [format] <path> ...]
+	[-tail [-f] <file>]
+	[-test -[defsz] <path>]
+	[-text [-ignoreCrc] <src> ...]
+	[-touchz <path> ...]
+	[-truncate [-w] <length> <path> ...]
+	[-usage [cmd ...]]
+
+Generic options supported are:
+-conf <configuration file>        specify an application configuration file
+-D <property=value>               define a value for a given property
+-fs <file:///|hdfs://namenode:port> specify default filesystem URL to use, overrides 'fs.defaultFS' property from configurations.
+-jt <local|resourcemanager:port>  specify a ResourceManager
+-files <file1,...>                specify a comma-separated list of files to be copied to the map reduce cluster
+-libjars <jar1,...>               specify a comma-separated list of jar files to be included in the classpath
+-archives <archive1,...>          specify a comma-separated list of archives to be unarchived on the compute machines
+
+The general command line syntax is:
+command [genericOptions] [commandOptions]
+
+Usage: hadoop fs [generic options] -put [-f] [-p] [-l] [-d] <localsrc> ... <dst>
+file 2 has been put into HDFS
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 1 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 2 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 3 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 4 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 5 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 6 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 7 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+2019-03-25 21:40:20,444 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - java.net.ConnectException: Call From clnode051.clemson.cloudlab.us/130.127.133.60 to node-1-link-0:8020 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused, while invoking ClientNamenodeProtocolTranslatorPB.getFileInfo over node-1-link-0/10.10.1.4:8020 after 1 failover attempts. Trying to failover after sleeping for 986ms.
+2019-03-25 21:40:21,439 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.StandbyException): Operation category READ is not supported in state standby. Visit https://s.apache.org/sbnn-error
+	at org.apache.hadoop.hdfs.server.namenode.ha.StandbyState.checkOperation(StandbyState.java:88)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode$NameNodeHAContext.checkOperation(NameNode.java:1952)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkOperation(FSNamesystem.java:1423)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getFileInfo(FSNamesystem.java:3085)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.getFileInfo(NameNodeRpcServer.java:1154)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.getFileInfo(ClientNamenodeProtocolServerSideTranslatorPB.java:966)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+, while invoking ClientNamenodeProtocolTranslatorPB.getFileInfo over node-0-link-0/10.10.1.1:8020 after 2 failover attempts. Trying to failover after sleeping for 2304ms.
+2019-03-25 21:40:23,745 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - java.net.ConnectException: Call From clnode051.clemson.cloudlab.us/130.127.133.60 to node-1-link-0:8020 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused, while invoking ClientNamenodeProtocolTranslatorPB.getFileInfo over node-1-link-0/10.10.1.4:8020 after 3 failover attempts. Trying to failover after sleeping for 4630ms.
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 8 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 9 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 10 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+rm: `/myfile2': No such file or directory
+file 2 has been removed from HDFS
+-put: Invalid values: dfs.bytes-per-checksum (=12) must divide block size (=134217728).
+Usage: hadoop fs [generic options]
+	[-appendToFile <localsrc> ... <dst>]
+	[-cat [-ignoreCrc] <src> ...]
+	[-checksum <src> ...]
+	[-chgrp [-R] GROUP PATH...]
+	[-chmod [-R] <MODE[,MODE]... | OCTALMODE> PATH...]
+	[-chown [-R] [OWNER][:[GROUP]] PATH...]
+	[-copyFromLocal [-f] [-p] [-l] [-d] [-t <thread count>] <localsrc> ... <dst>]
+	[-copyToLocal [-f] [-p] [-ignoreCrc] [-crc] <src> ... <localdst>]
+	[-count [-q] [-h] [-v] [-t [<storage type>]] [-u] [-x] [-e] <path> ...]
+	[-cp [-f] [-p | -p[topax]] [-d] <src> ... <dst>]
+	[-createSnapshot <snapshotDir> [<snapshotName>]]
+	[-deleteSnapshot <snapshotDir> <snapshotName>]
+	[-df [-h] [<path> ...]]
+	[-du [-s] [-h] [-v] [-x] <path> ...]
+	[-expunge]
+	[-find <path> ... <expression> ...]
+	[-get [-f] [-p] [-ignoreCrc] [-crc] <src> ... <localdst>]
+	[-getfacl [-R] <path>]
+	[-getfattr [-R] {-n name | -d} [-e en] <path>]
+	[-getmerge [-nl] [-skip-empty-file] <src> <localdst>]
+	[-head <file>]
+	[-help [cmd ...]]
+	[-ls [-C] [-d] [-h] [-q] [-R] [-t] [-S] [-r] [-u] [-e] [<path> ...]]
+	[-mkdir [-p] <path> ...]
+	[-moveFromLocal <localsrc> ... <dst>]
+	[-moveToLocal <src> <localdst>]
+	[-mv <src> ... <dst>]
+	[-put [-f] [-p] [-l] [-d] <localsrc> ... <dst>]
+	[-renameSnapshot <snapshotDir> <oldName> <newName>]
+	[-rm [-f] [-r|-R] [-skipTrash] [-safely] <src> ...]
+	[-rmdir [--ignore-fail-on-non-empty] <dir> ...]
+	[-setfacl [-R] [{-b|-k} {-m|-x <acl_spec>} <path>]|[--set <acl_spec> <path>]]
+	[-setfattr {-n name [-v value] | -x name} <path>]
+	[-setrep [-R] [-w] <rep> <path> ...]
+	[-stat [format] <path> ...]
+	[-tail [-f] <file>]
+	[-test -[defsz] <path>]
+	[-text [-ignoreCrc] <src> ...]
+	[-touchz <path> ...]
+	[-truncate [-w] <length> <path> ...]
+	[-usage [cmd ...]]
+
+Generic options supported are:
+-conf <configuration file>        specify an application configuration file
+-D <property=value>               define a value for a given property
+-fs <file:///|hdfs://namenode:port> specify default filesystem URL to use, overrides 'fs.defaultFS' property from configurations.
+-jt <local|resourcemanager:port>  specify a ResourceManager
+-files <file1,...>                specify a comma-separated list of files to be copied to the map reduce cluster
+-libjars <jar1,...>               specify a comma-separated list of jar files to be included in the classpath
+-archives <archive1,...>          specify a comma-separated list of archives to be unarchived on the compute machines
+
+The general command line syntax is:
+command [genericOptions] [commandOptions]
+
+Usage: hadoop fs [generic options] -put [-f] [-p] [-l] [-d] <localsrc> ... <dst>
+file 2 has been put into HDFS
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 1 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 2 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 3 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 4 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 5 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 6 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 7 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 8 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 9 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 10 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+rm: `/myfile2': No such file or directory
+file 2 has been removed from HDFS
+-put: Invalid values: dfs.bytes-per-checksum (=12) must divide block size (=134217728).
+Usage: hadoop fs [generic options]
+	[-appendToFile <localsrc> ... <dst>]
+	[-cat [-ignoreCrc] <src> ...]
+	[-checksum <src> ...]
+	[-chgrp [-R] GROUP PATH...]
+	[-chmod [-R] <MODE[,MODE]... | OCTALMODE> PATH...]
+	[-chown [-R] [OWNER][:[GROUP]] PATH...]
+	[-copyFromLocal [-f] [-p] [-l] [-d] [-t <thread count>] <localsrc> ... <dst>]
+	[-copyToLocal [-f] [-p] [-ignoreCrc] [-crc] <src> ... <localdst>]
+	[-count [-q] [-h] [-v] [-t [<storage type>]] [-u] [-x] [-e] <path> ...]
+	[-cp [-f] [-p | -p[topax]] [-d] <src> ... <dst>]
+	[-createSnapshot <snapshotDir> [<snapshotName>]]
+	[-deleteSnapshot <snapshotDir> <snapshotName>]
+	[-df [-h] [<path> ...]]
+	[-du [-s] [-h] [-v] [-x] <path> ...]
+	[-expunge]
+	[-find <path> ... <expression> ...]
+	[-get [-f] [-p] [-ignoreCrc] [-crc] <src> ... <localdst>]
+	[-getfacl [-R] <path>]
+	[-getfattr [-R] {-n name | -d} [-e en] <path>]
+	[-getmerge [-nl] [-skip-empty-file] <src> <localdst>]
+	[-head <file>]
+	[-help [cmd ...]]
+	[-ls [-C] [-d] [-h] [-q] [-R] [-t] [-S] [-r] [-u] [-e] [<path> ...]]
+	[-mkdir [-p] <path> ...]
+	[-moveFromLocal <localsrc> ... <dst>]
+	[-moveToLocal <src> <localdst>]
+	[-mv <src> ... <dst>]
+	[-put [-f] [-p] [-l] [-d] <localsrc> ... <dst>]
+	[-renameSnapshot <snapshotDir> <oldName> <newName>]
+	[-rm [-f] [-r|-R] [-skipTrash] [-safely] <src> ...]
+	[-rmdir [--ignore-fail-on-non-empty] <dir> ...]
+	[-setfacl [-R] [{-b|-k} {-m|-x <acl_spec>} <path>]|[--set <acl_spec> <path>]]
+	[-setfattr {-n name [-v value] | -x name} <path>]
+	[-setrep [-R] [-w] <rep> <path> ...]
+	[-stat [format] <path> ...]
+	[-tail [-f] <file>]
+	[-test -[defsz] <path>]
+	[-text [-ignoreCrc] <src> ...]
+	[-touchz <path> ...]
+	[-truncate [-w] <length> <path> ...]
+	[-usage [cmd ...]]
+
+Generic options supported are:
+-conf <configuration file>        specify an application configuration file
+-D <property=value>               define a value for a given property
+-fs <file:///|hdfs://namenode:port> specify default filesystem URL to use, overrides 'fs.defaultFS' property from configurations.
+-jt <local|resourcemanager:port>  specify a ResourceManager
+-files <file1,...>                specify a comma-separated list of files to be copied to the map reduce cluster
+-libjars <jar1,...>               specify a comma-separated list of jar files to be included in the classpath
+-archives <archive1,...>          specify a comma-separated list of archives to be unarchived on the compute machines
+
+The general command line syntax is:
+command [genericOptions] [commandOptions]
+
+Usage: hadoop fs [generic options] -put [-f] [-p] [-l] [-d] <localsrc> ... <dst>
+file 2 has been put into HDFS
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 1 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+2019-03-25 21:41:36,736 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - java.net.ConnectException: Call From clnode051.clemson.cloudlab.us/130.127.133.60 to node-1-link-0:8020 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused, while invoking ClientNamenodeProtocolTranslatorPB.getFileInfo over node-1-link-0/10.10.1.4:8020 after 1 failover attempts. Trying to failover after sleeping for 1049ms.
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 2 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 3 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 4 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 5 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 6 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 7 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+2019-03-25 21:41:59,418 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.StandbyException): Operation category READ is not supported in state standby. Visit https://s.apache.org/sbnn-error
+	at org.apache.hadoop.hdfs.server.namenode.ha.StandbyState.checkOperation(StandbyState.java:88)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode$NameNodeHAContext.checkOperation(NameNode.java:1952)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkOperation(FSNamesystem.java:1423)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getFileInfo(FSNamesystem.java:3085)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.getFileInfo(NameNodeRpcServer.java:1154)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.getFileInfo(ClientNamenodeProtocolServerSideTranslatorPB.java:966)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+, while invoking ClientNamenodeProtocolTranslatorPB.getFileInfo over node-1-link-0/10.10.1.4:8020 after 1 failover attempts. Trying to failover after sleeping for 819ms.
+2019-03-25 21:42:00,245 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - java.net.ConnectException: Call From clnode051.clemson.cloudlab.us/130.127.133.60 to node-0-link-0:8020 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused, while invoking ClientNamenodeProtocolTranslatorPB.getFileInfo over node-0-link-0/10.10.1.1:8020 after 2 failover attempts. Trying to failover after sleeping for 2659ms.
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 8 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 9 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 10 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+rm: `/myfile2': No such file or directory
+file 2 has been removed from HDFS
+-put: Invalid values: dfs.bytes-per-checksum (=12) must divide block size (=134217728).
+Usage: hadoop fs [generic options]
+	[-appendToFile <localsrc> ... <dst>]
+	[-cat [-ignoreCrc] <src> ...]
+	[-checksum <src> ...]
+	[-chgrp [-R] GROUP PATH...]
+	[-chmod [-R] <MODE[,MODE]... | OCTALMODE> PATH...]
+	[-chown [-R] [OWNER][:[GROUP]] PATH...]
+	[-copyFromLocal [-f] [-p] [-l] [-d] [-t <thread count>] <localsrc> ... <dst>]
+	[-copyToLocal [-f] [-p] [-ignoreCrc] [-crc] <src> ... <localdst>]
+	[-count [-q] [-h] [-v] [-t [<storage type>]] [-u] [-x] [-e] <path> ...]
+	[-cp [-f] [-p | -p[topax]] [-d] <src> ... <dst>]
+	[-createSnapshot <snapshotDir> [<snapshotName>]]
+	[-deleteSnapshot <snapshotDir> <snapshotName>]
+	[-df [-h] [<path> ...]]
+	[-du [-s] [-h] [-v] [-x] <path> ...]
+	[-expunge]
+	[-find <path> ... <expression> ...]
+	[-get [-f] [-p] [-ignoreCrc] [-crc] <src> ... <localdst>]
+	[-getfacl [-R] <path>]
+	[-getfattr [-R] {-n name | -d} [-e en] <path>]
+	[-getmerge [-nl] [-skip-empty-file] <src> <localdst>]
+	[-head <file>]
+	[-help [cmd ...]]
+	[-ls [-C] [-d] [-h] [-q] [-R] [-t] [-S] [-r] [-u] [-e] [<path> ...]]
+	[-mkdir [-p] <path> ...]
+	[-moveFromLocal <localsrc> ... <dst>]
+	[-moveToLocal <src> <localdst>]
+	[-mv <src> ... <dst>]
+	[-put [-f] [-p] [-l] [-d] <localsrc> ... <dst>]
+	[-renameSnapshot <snapshotDir> <oldName> <newName>]
+	[-rm [-f] [-r|-R] [-skipTrash] [-safely] <src> ...]
+	[-rmdir [--ignore-fail-on-non-empty] <dir> ...]
+	[-setfacl [-R] [{-b|-k} {-m|-x <acl_spec>} <path>]|[--set <acl_spec> <path>]]
+	[-setfattr {-n name [-v value] | -x name} <path>]
+	[-setrep [-R] [-w] <rep> <path> ...]
+	[-stat [format] <path> ...]
+	[-tail [-f] <file>]
+	[-test -[defsz] <path>]
+	[-text [-ignoreCrc] <src> ...]
+	[-touchz <path> ...]
+	[-truncate [-w] <length> <path> ...]
+	[-usage [cmd ...]]
+
+Generic options supported are:
+-conf <configuration file>        specify an application configuration file
+-D <property=value>               define a value for a given property
+-fs <file:///|hdfs://namenode:port> specify default filesystem URL to use, overrides 'fs.defaultFS' property from configurations.
+-jt <local|resourcemanager:port>  specify a ResourceManager
+-files <file1,...>                specify a comma-separated list of files to be copied to the map reduce cluster
+-libjars <jar1,...>               specify a comma-separated list of jar files to be included in the classpath
+-archives <archive1,...>          specify a comma-separated list of archives to be unarchived on the compute machines
+
+The general command line syntax is:
+command [genericOptions] [commandOptions]
+
+Usage: hadoop fs [generic options] -put [-f] [-p] [-l] [-d] <localsrc> ... <dst>
+file 2 has been put into HDFS
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 1 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 2 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 3 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 4 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 5 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+get: `/myfile2': No such file or directory
+TEST_ERROR: get failed!
+file 2 has been read from HDFS for 6 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile2: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile2': No such file or directory
+get: `/myfile2': No such file or directory

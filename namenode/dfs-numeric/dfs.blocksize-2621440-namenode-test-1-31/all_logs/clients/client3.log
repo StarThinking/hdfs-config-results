@@ -1,0 +1,256 @@
+2019-03-25 20:31:32,771 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - java.io.EOFException: End of File Exception between local host is: "clnode051.clemson.cloudlab.us/130.127.133.60"; destination host is: "node-1-link-0":8020; : java.io.EOFException; For more details see:  http://wiki.apache.org/hadoop/EOFException, while invoking ClientNamenodeProtocolTranslatorPB.addBlock over node-1-link-0/10.10.1.4:8020. Trying to failover immediately.
+2019-03-25 20:31:32,782 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.StandbyException): Operation category READ is not supported in state standby. Visit https://s.apache.org/sbnn-error
+	at org.apache.hadoop.hdfs.server.namenode.ha.StandbyState.checkOperation(StandbyState.java:88)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode$NameNodeHAContext.checkOperation(NameNode.java:1952)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkOperation(FSNamesystem.java:1423)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getAdditionalBlock(FSNamesystem.java:2674)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.addBlock(NameNodeRpcServer.java:875)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.addBlock(ClientNamenodeProtocolServerSideTranslatorPB.java:561)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+, while invoking ClientNamenodeProtocolTranslatorPB.addBlock over node-0-link-0/10.10.1.1:8020 after 1 failover attempts. Trying to failover after sleeping for 1394ms.
+2019-03-25 20:31:32,997 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.StandbyException): Operation category WRITE is not supported in state standby. Visit https://s.apache.org/sbnn-error
+	at org.apache.hadoop.hdfs.server.namenode.ha.StandbyState.checkOperation(StandbyState.java:88)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode$NameNodeHAContext.checkOperation(NameNode.java:1952)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkOperation(FSNamesystem.java:1423)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.renewLease(FSNamesystem.java:3740)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.renewLease(NameNodeRpcServer.java:1134)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.renewLease(ClientNamenodeProtocolServerSideTranslatorPB.java:737)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+, while invoking ClientNamenodeProtocolTranslatorPB.renewLease over node-0-link-0/10.10.1.1:8020. Trying to failover immediately.
+2019-03-25 20:31:33,000 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - java.net.ConnectException: Call From clnode051.clemson.cloudlab.us/130.127.133.60 to node-1-link-0:8020 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused, while invoking ClientNamenodeProtocolTranslatorPB.renewLease over node-1-link-0/10.10.1.4:8020 after 1 failover attempts. Trying to failover after sleeping for 1271ms.
+2019-03-25 20:31:34,177 WARN  retry.RetryInvocationHandler RetryInvocationHandler.java:failover:220 - A failover has occurred since the start of call #351 ClientNamenodeProtocolTranslatorPB.addBlock over node-1-link-0/10.10.1.4:8020
+2019-03-25 20:31:34,179 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - java.net.ConnectException: Call From clnode051.clemson.cloudlab.us/130.127.133.60 to node-1-link-0:8020 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused, while invoking ClientNamenodeProtocolTranslatorPB.addBlock over node-1-link-0/10.10.1.4:8020 after 2 failover attempts. Trying to failover after sleeping for 2349ms.
+2019-03-25 20:31:34,272 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.StandbyException): Operation category WRITE is not supported in state standby. Visit https://s.apache.org/sbnn-error
+	at org.apache.hadoop.hdfs.server.namenode.ha.StandbyState.checkOperation(StandbyState.java:88)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode$NameNodeHAContext.checkOperation(NameNode.java:1952)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkOperation(FSNamesystem.java:1423)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.renewLease(FSNamesystem.java:3740)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.renewLease(NameNodeRpcServer.java:1134)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.renewLease(ClientNamenodeProtocolServerSideTranslatorPB.java:737)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+, while invoking ClientNamenodeProtocolTranslatorPB.renewLease over node-0-link-0/10.10.1.1:8020 after 2 failover attempts. Trying to failover after sleeping for 1571ms.
+2019-03-25 20:31:35,845 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - java.net.ConnectException: Call From clnode051.clemson.cloudlab.us/130.127.133.60 to node-1-link-0:8020 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused, while invoking ClientNamenodeProtocolTranslatorPB.renewLease over node-1-link-0/10.10.1.4:8020 after 3 failover attempts. Trying to failover after sleeping for 2963ms.
+2019-03-25 20:31:36,529 WARN  retry.RetryInvocationHandler RetryInvocationHandler.java:failover:220 - A failover has occurred since the start of call #351 ClientNamenodeProtocolTranslatorPB.addBlock over node-1-link-0/10.10.1.4:8020
+2019-03-25 20:31:36,530 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - java.net.ConnectException: Call From clnode051.clemson.cloudlab.us/130.127.133.60 to node-1-link-0:8020 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused, while invoking ClientNamenodeProtocolTranslatorPB.addBlock over node-1-link-0/10.10.1.4:8020 after 3 failover attempts. Trying to failover after sleeping for 4564ms.
+2019-03-25 20:31:41,095 WARN  retry.RetryInvocationHandler RetryInvocationHandler.java:failover:220 - A failover has occurred since the start of call #351 ClientNamenodeProtocolTranslatorPB.addBlock over node-0-link-0/10.10.1.1:8020
+2019-03-25 20:32:06,534 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - java.io.EOFException: End of File Exception between local host is: "clnode051.clemson.cloudlab.us/130.127.133.60"; destination host is: "node-0-link-0":8020; : java.io.EOFException; For more details see:  http://wiki.apache.org/hadoop/EOFException, while invoking ClientNamenodeProtocolTranslatorPB.addBlock over node-0-link-0/10.10.1.1:8020. Trying to failover immediately.
+2019-03-25 20:32:06,569 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.StandbyException): Operation category READ is not supported in state standby. Visit https://s.apache.org/sbnn-error
+	at org.apache.hadoop.hdfs.server.namenode.ha.StandbyState.checkOperation(StandbyState.java:88)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode$NameNodeHAContext.checkOperation(NameNode.java:1952)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkOperation(FSNamesystem.java:1423)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getAdditionalBlock(FSNamesystem.java:2674)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.addBlock(NameNodeRpcServer.java:875)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.addBlock(ClientNamenodeProtocolServerSideTranslatorPB.java:561)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+, while invoking ClientNamenodeProtocolTranslatorPB.addBlock over node-1-link-0/10.10.1.4:8020 after 1 failover attempts. Trying to failover after sleeping for 1109ms.
+2019-03-25 20:32:07,680 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - java.net.ConnectException: Call From clnode051.clemson.cloudlab.us/130.127.133.60 to node-0-link-0:8020 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused, while invoking ClientNamenodeProtocolTranslatorPB.addBlock over node-0-link-0/10.10.1.1:8020 after 2 failover attempts. Trying to failover after sleeping for 2018ms.
+2019-03-25 20:32:08,947 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - java.net.ConnectException: Call From clnode051.clemson.cloudlab.us/130.127.133.60 to node-0-link-0:8020 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused, while invoking ClientNamenodeProtocolTranslatorPB.renewLease over node-0-link-0/10.10.1.1:8020. Trying to failover immediately.
+2019-03-25 20:32:09,699 WARN  retry.RetryInvocationHandler RetryInvocationHandler.java:failover:220 - A failover has occurred since the start of call #354 ClientNamenodeProtocolTranslatorPB.addBlock over node-1-link-0/10.10.1.4:8020
+2019-03-25 20:32:15,784 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.RetriableException): org.apache.hadoop.hdfs.server.namenode.SafeModeException: Cannot renew lease for DFSClient_NONMAPREDUCE_-1788654336_1. Name node is in safe mode.
+The reported blocks 1765 has reached the threshold 0.9990 of total blocks 1765. The number of live datanodes 4 has reached the minimum number 0. In safe mode extension. Safe mode will be turned off automatically in 6 seconds. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1441)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.renewLease(FSNamesystem.java:3744)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.renewLease(NameNodeRpcServer.java:1134)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.renewLease(ClientNamenodeProtocolServerSideTranslatorPB.java:737)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+Caused by: org.apache.hadoop.hdfs.server.namenode.SafeModeException: Cannot renew lease for DFSClient_NONMAPREDUCE_-1788654336_1. Name node is in safe mode.
+The reported blocks 1765 has reached the threshold 0.9990 of total blocks 1765. The number of live datanodes 4 has reached the minimum number 0. In safe mode extension. Safe mode will be turned off automatically in 6 seconds. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1450)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1437)
+	... 12 more
+, while invoking ClientNamenodeProtocolTranslatorPB.renewLease over node-1-link-0/10.10.1.4:8020 after 1 failover attempts. Retrying after sleeping for 690ms.
+2019-03-25 20:32:15,785 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.RetriableException): org.apache.hadoop.hdfs.server.namenode.SafeModeException: Cannot add block to /myfile3._COPYING_. Name node is in safe mode.
+The reported blocks 1765 has reached the threshold 0.9990 of total blocks 1765. The number of live datanodes 4 has reached the minimum number 0. In safe mode extension. Safe mode will be turned off automatically in 6 seconds. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1441)
+	at org.apache.hadoop.hdfs.server.namenode.FSDirWriteFileOp.analyzeFileState(FSDirWriteFileOp.java:591)
+	at org.apache.hadoop.hdfs.server.namenode.FSDirWriteFileOp.validateAddBlock(FSDirWriteFileOp.java:172)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getAdditionalBlock(FSNamesystem.java:2679)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.addBlock(NameNodeRpcServer.java:875)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.addBlock(ClientNamenodeProtocolServerSideTranslatorPB.java:561)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+Caused by: org.apache.hadoop.hdfs.server.namenode.SafeModeException: Cannot add block to /myfile3._COPYING_. Name node is in safe mode.
+The reported blocks 1765 has reached the threshold 0.9990 of total blocks 1765. The number of live datanodes 4 has reached the minimum number 0. In safe mode extension. Safe mode will be turned off automatically in 6 seconds. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1450)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1437)
+	... 14 more
+, while invoking ClientNamenodeProtocolTranslatorPB.addBlock over node-1-link-0/10.10.1.4:8020 after 3 failover attempts. Retrying after sleeping for 5011ms.
+2019-03-25 20:32:16,476 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.RetriableException): org.apache.hadoop.hdfs.server.namenode.SafeModeException: Cannot renew lease for DFSClient_NONMAPREDUCE_-1788654336_1. Name node is in safe mode.
+The reported blocks 1765 has reached the threshold 0.9990 of total blocks 1765. The number of live datanodes 4 has reached the minimum number 0. In safe mode extension. Safe mode will be turned off automatically in 5 seconds. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1441)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.renewLease(FSNamesystem.java:3744)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.renewLease(NameNodeRpcServer.java:1134)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.renewLease(ClientNamenodeProtocolServerSideTranslatorPB.java:737)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+Caused by: org.apache.hadoop.hdfs.server.namenode.SafeModeException: Cannot renew lease for DFSClient_NONMAPREDUCE_-1788654336_1. Name node is in safe mode.
+The reported blocks 1765 has reached the threshold 0.9990 of total blocks 1765. The number of live datanodes 4 has reached the minimum number 0. In safe mode extension. Safe mode will be turned off automatically in 5 seconds. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1450)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1437)
+	... 12 more
+, while invoking ClientNamenodeProtocolTranslatorPB.renewLease over node-1-link-0/10.10.1.4:8020 after 1 failover attempts. Retrying after sleeping for 2927ms.
+2019-03-25 20:32:19,405 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.RetriableException): org.apache.hadoop.hdfs.server.namenode.SafeModeException: Cannot renew lease for DFSClient_NONMAPREDUCE_-1788654336_1. Name node is in safe mode.
+The reported blocks 1765 has reached the threshold 0.9990 of total blocks 1765. The number of live datanodes 4 has reached the minimum number 0. In safe mode extension. Safe mode will be turned off automatically in 2 seconds. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1441)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.renewLease(FSNamesystem.java:3744)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.renewLease(NameNodeRpcServer.java:1134)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.renewLease(ClientNamenodeProtocolServerSideTranslatorPB.java:737)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+Caused by: org.apache.hadoop.hdfs.server.namenode.SafeModeException: Cannot renew lease for DFSClient_NONMAPREDUCE_-1788654336_1. Name node is in safe mode.
+The reported blocks 1765 has reached the threshold 0.9990 of total blocks 1765. The number of live datanodes 4 has reached the minimum number 0. In safe mode extension. Safe mode will be turned off automatically in 2 seconds. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1450)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1437)
+	... 12 more
+, while invoking ClientNamenodeProtocolTranslatorPB.renewLease over node-1-link-0/10.10.1.4:8020 after 1 failover attempts. Retrying after sleeping for 4416ms.
+2019-03-25 20:32:20,798 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.RetriableException): org.apache.hadoop.hdfs.server.namenode.SafeModeException: Cannot add block to /myfile3._COPYING_. Name node is in safe mode.
+The reported blocks 1765 has reached the threshold 0.9990 of total blocks 1765. The number of live datanodes 4 has reached the minimum number 0. In safe mode extension. Safe mode will be turned off automatically in 1 seconds. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1441)
+	at org.apache.hadoop.hdfs.server.namenode.FSDirWriteFileOp.analyzeFileState(FSDirWriteFileOp.java:591)
+	at org.apache.hadoop.hdfs.server.namenode.FSDirWriteFileOp.validateAddBlock(FSDirWriteFileOp.java:172)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getAdditionalBlock(FSNamesystem.java:2679)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.addBlock(NameNodeRpcServer.java:875)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.addBlock(ClientNamenodeProtocolServerSideTranslatorPB.java:561)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+Caused by: org.apache.hadoop.hdfs.server.namenode.SafeModeException: Cannot add block to /myfile3._COPYING_. Name node is in safe mode.
+The reported blocks 1765 has reached the threshold 0.9990 of total blocks 1765. The number of live datanodes 4 has reached the minimum number 0. In safe mode extension. Safe mode will be turned off automatically in 1 seconds. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1450)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1437)
+	... 14 more
+, while invoking ClientNamenodeProtocolTranslatorPB.addBlock over node-1-link-0/10.10.1.4:8020 after 3 failover attempts. Retrying after sleeping for 11639ms.
+Found 5 items
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 20:32 /myfile1
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 20:32 /myfile2
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 20:32 /myfile3
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 20:32 /myfile4
+-rw-r--r--   3 root supergroup 1073741824 2019-03-25 20:32 /myfile5
+file 3 has been put into HDFS
+file 3 has been read from HDFS for 1 time
+diff succeed!
+file 3 has been read from HDFS for 2 time
+diff succeed!
+2019-03-25 20:32:59,460 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - java.io.IOException: DestHost:destPort node-1-link-0:8020 , LocalHost:localPort clnode051.clemson.cloudlab.us/130.127.133.60:0. Failed on local exception: java.io.IOException: Connection reset by peer, while invoking ClientNamenodeProtocolTranslatorPB.getBlockLocations over node-1-link-0/10.10.1.4:8020. Trying to failover immediately.
+2019-03-25 20:32:59,469 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.StandbyException): Operation category READ is not supported in state standby. Visit https://s.apache.org/sbnn-error
+	at org.apache.hadoop.hdfs.server.namenode.ha.StandbyState.checkOperation(StandbyState.java:88)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode$NameNodeHAContext.checkOperation(NameNode.java:1952)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkOperation(FSNamesystem.java:1423)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlockLocations(FSNamesystem.java:1921)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.getBlockLocations(NameNodeRpcServer.java:738)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.getBlockLocations(ClientNamenodeProtocolServerSideTranslatorPB.java:426)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+, while invoking ClientNamenodeProtocolTranslatorPB.getBlockLocations over node-0-link-0/10.10.1.1:8020 after 1 failover attempts. Trying to failover after sleeping for 503ms.
+2019-03-25 20:32:59,975 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - java.net.ConnectException: Call From clnode051.clemson.cloudlab.us/130.127.133.60 to node-1-link-0:8020 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused, while invoking ClientNamenodeProtocolTranslatorPB.getBlockLocations over node-1-link-0/10.10.1.4:8020 after 2 failover attempts. Trying to failover after sleeping for 2604ms.
+file 3 has been read from HDFS for 3 time
+diff succeed!
+file 3 has been read from HDFS for 4 time
+diff succeed!
+file 3 has been read from HDFS for 5 time
+diff succeed!
+2019-03-25 20:33:28,867 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - java.io.IOException: DestHost:destPort node-0-link-0:8020 , LocalHost:localPort clnode051.clemson.cloudlab.us/130.127.133.60:0. Failed on local exception: java.io.IOException: Connection reset by peer, while invoking ClientNamenodeProtocolTranslatorPB.getBlockLocations over node-0-link-0/10.10.1.1:8020. Trying to failover immediately.
+2019-03-25 20:33:28,904 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.StandbyException): Operation category READ is not supported in state standby. Visit https://s.apache.org/sbnn-error
+	at org.apache.hadoop.hdfs.server.namenode.ha.StandbyState.checkOperation(StandbyState.java:88)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode$NameNodeHAContext.checkOperation(NameNode.java:1952)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkOperation(FSNamesystem.java:1423)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlockLocations(FSNamesystem.java:1921)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.getBlockLocations(NameNodeRpcServer.java:738)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.getBlockLocations(ClientNamenodeProtocolServerSideTranslatorPB.java:426)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+, while invoking ClientNamenodeProtocolTranslatorPB.getBlockLocations over node-1-link-0/10.10.1.4:8020 after 1 failover attempts. Trying to failover after sleeping for 822ms.
+2019-03-25 20:33:29,729 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - java.net.ConnectException: Call From clnode051.clemson.cloudlab.us/130.127.133.60 to node-0-link-0:8020 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused, while invoking ClientNamenodeProtocolTranslatorPB.getBlockLocations over node-0-link-0/10.10.1.1:8020 after 2 failover attempts. Trying to failover after sleeping for 1846ms.
+file 3 has been read from HDFS for 6 time
+diff succeed!
+file 3 has been read from HDFS for 7 time
+diff succeed!
+file 3 has been read from HDFS for 8 time
+diff succeed!
+file 3 has been read from HDFS for 9 time
+diff succeed!
+file 3 has been read from HDFS for 10 time
+diff succeed!
+Deleted /myfile3
+file 3 has been removed from HDFS
