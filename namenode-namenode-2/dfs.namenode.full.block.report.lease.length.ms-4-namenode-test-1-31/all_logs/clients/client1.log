@@ -1,0 +1,343 @@
+Found 5 items
+-rw-r--r--   3 root supergroup 1073741824 2019-03-27 04:40 /myfile1
+-rw-r--r--   3 root supergroup 1073741824 2019-03-27 04:40 /myfile2
+-rw-r--r--   3 root supergroup 1073741824 2019-03-27 04:40 /myfile3
+-rw-r--r--   3 root supergroup 1073741824 2019-03-27 04:40 /myfile4
+-rw-r--r--   3 root supergroup 1073741824 2019-03-27 04:40 /myfile5
+file 1 has been put into HDFS
+file 1 has been read from HDFS for 1 time
+diff succeed!
+file 1 has been read from HDFS for 2 time
+diff succeed!
+2019-03-27 04:42:03,272 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.RetriableException): org.apache.hadoop.hdfs.server.namenode.SafeModeException: Zero blocklocations for /myfile1. Name node is in safe mode.
+The reported blocks 0 needs additional 39 blocks to reach the threshold 0.9990 of total blocks 40.
+The number of live datanodes 4 has reached the minimum number 0. Safe mode will be turned off automatically once the thresholds have been reached. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlockLocations(FSNamesystem.java:1937)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.getBlockLocations(NameNodeRpcServer.java:738)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.getBlockLocations(ClientNamenodeProtocolServerSideTranslatorPB.java:426)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+Caused by: org.apache.hadoop.hdfs.server.namenode.SafeModeException: Zero blocklocations for /myfile1. Name node is in safe mode.
+The reported blocks 0 needs additional 39 blocks to reach the threshold 0.9990 of total blocks 40.
+The number of live datanodes 4 has reached the minimum number 0. Safe mode will be turned off automatically once the thresholds have been reached. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1450)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlockLocations(FSNamesystem.java:1933)
+	... 11 more
+, while invoking ClientNamenodeProtocolTranslatorPB.getBlockLocations over node-1-link-0/10.10.1.4:8020. Retrying immediately.
+2019-03-27 04:42:03,281 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.RetriableException): org.apache.hadoop.hdfs.server.namenode.SafeModeException: Zero blocklocations for /myfile1. Name node is in safe mode.
+The reported blocks 0 needs additional 39 blocks to reach the threshold 0.9990 of total blocks 40.
+The number of live datanodes 4 has reached the minimum number 0. Safe mode will be turned off automatically once the thresholds have been reached. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlockLocations(FSNamesystem.java:1937)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.getBlockLocations(NameNodeRpcServer.java:738)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.getBlockLocations(ClientNamenodeProtocolServerSideTranslatorPB.java:426)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+Caused by: org.apache.hadoop.hdfs.server.namenode.SafeModeException: Zero blocklocations for /myfile1. Name node is in safe mode.
+The reported blocks 0 needs additional 39 blocks to reach the threshold 0.9990 of total blocks 40.
+The number of live datanodes 4 has reached the minimum number 0. Safe mode will be turned off automatically once the thresholds have been reached. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1450)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlockLocations(FSNamesystem.java:1933)
+	... 11 more
+, while invoking ClientNamenodeProtocolTranslatorPB.getBlockLocations over node-1-link-0/10.10.1.4:8020. Retrying after sleeping for 1036ms.
+2019-03-27 04:42:04,320 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.RetriableException): org.apache.hadoop.hdfs.server.namenode.SafeModeException: Zero blocklocations for /myfile1. Name node is in safe mode.
+The reported blocks 0 needs additional 39 blocks to reach the threshold 0.9990 of total blocks 40.
+The number of live datanodes 4 has reached the minimum number 0. Safe mode will be turned off automatically once the thresholds have been reached. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlockLocations(FSNamesystem.java:1937)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.getBlockLocations(NameNodeRpcServer.java:738)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.getBlockLocations(ClientNamenodeProtocolServerSideTranslatorPB.java:426)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+Caused by: org.apache.hadoop.hdfs.server.namenode.SafeModeException: Zero blocklocations for /myfile1. Name node is in safe mode.
+The reported blocks 0 needs additional 39 blocks to reach the threshold 0.9990 of total blocks 40.
+The number of live datanodes 4 has reached the minimum number 0. Safe mode will be turned off automatically once the thresholds have been reached. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1450)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlockLocations(FSNamesystem.java:1933)
+	... 11 more
+, while invoking ClientNamenodeProtocolTranslatorPB.getBlockLocations over node-1-link-0/10.10.1.4:8020. Retrying after sleeping for 1777ms.
+2019-03-27 04:42:06,102 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.RetriableException): org.apache.hadoop.hdfs.server.namenode.SafeModeException: Zero blocklocations for /myfile1. Name node is in safe mode.
+The reported blocks 0 needs additional 39 blocks to reach the threshold 0.9990 of total blocks 40.
+The number of live datanodes 4 has reached the minimum number 0. Safe mode will be turned off automatically once the thresholds have been reached. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlockLocations(FSNamesystem.java:1937)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.getBlockLocations(NameNodeRpcServer.java:738)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.getBlockLocations(ClientNamenodeProtocolServerSideTranslatorPB.java:426)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+Caused by: org.apache.hadoop.hdfs.server.namenode.SafeModeException: Zero blocklocations for /myfile1. Name node is in safe mode.
+The reported blocks 0 needs additional 39 blocks to reach the threshold 0.9990 of total blocks 40.
+The number of live datanodes 4 has reached the minimum number 0. Safe mode will be turned off automatically once the thresholds have been reached. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1450)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlockLocations(FSNamesystem.java:1933)
+	... 11 more
+, while invoking ClientNamenodeProtocolTranslatorPB.getBlockLocations over node-1-link-0/10.10.1.4:8020. Retrying after sleeping for 3381ms.
+2019-03-27 04:42:09,487 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.RetriableException): org.apache.hadoop.hdfs.server.namenode.SafeModeException: Zero blocklocations for /myfile1. Name node is in safe mode.
+The reported blocks 0 needs additional 39 blocks to reach the threshold 0.9990 of total blocks 40.
+The number of live datanodes 4 has reached the minimum number 0. Safe mode will be turned off automatically once the thresholds have been reached. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlockLocations(FSNamesystem.java:1937)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.getBlockLocations(NameNodeRpcServer.java:738)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.getBlockLocations(ClientNamenodeProtocolServerSideTranslatorPB.java:426)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+Caused by: org.apache.hadoop.hdfs.server.namenode.SafeModeException: Zero blocklocations for /myfile1. Name node is in safe mode.
+The reported blocks 0 needs additional 39 blocks to reach the threshold 0.9990 of total blocks 40.
+The number of live datanodes 4 has reached the minimum number 0. Safe mode will be turned off automatically once the thresholds have been reached. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1450)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlockLocations(FSNamesystem.java:1933)
+	... 11 more
+, while invoking ClientNamenodeProtocolTranslatorPB.getBlockLocations over node-1-link-0/10.10.1.4:8020. Retrying after sleeping for 5028ms.
+2019-03-27 04:42:14,517 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.RetriableException): org.apache.hadoop.hdfs.server.namenode.SafeModeException: Zero blocklocations for /myfile1. Name node is in safe mode.
+The reported blocks 0 needs additional 39 blocks to reach the threshold 0.9990 of total blocks 40.
+The number of live datanodes 4 has reached the minimum number 0. Safe mode will be turned off automatically once the thresholds have been reached. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlockLocations(FSNamesystem.java:1937)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.getBlockLocations(NameNodeRpcServer.java:738)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.getBlockLocations(ClientNamenodeProtocolServerSideTranslatorPB.java:426)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+Caused by: org.apache.hadoop.hdfs.server.namenode.SafeModeException: Zero blocklocations for /myfile1. Name node is in safe mode.
+The reported blocks 0 needs additional 39 blocks to reach the threshold 0.9990 of total blocks 40.
+The number of live datanodes 4 has reached the minimum number 0. Safe mode will be turned off automatically once the thresholds have been reached. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1450)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlockLocations(FSNamesystem.java:1933)
+	... 11 more
+, while invoking ClientNamenodeProtocolTranslatorPB.getBlockLocations over node-1-link-0/10.10.1.4:8020. Retrying after sleeping for 8742ms.
+2019-03-27 04:42:23,263 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.RetriableException): org.apache.hadoop.hdfs.server.namenode.SafeModeException: Zero blocklocations for /myfile1. Name node is in safe mode.
+The reported blocks 0 needs additional 39 blocks to reach the threshold 0.9990 of total blocks 40.
+The number of live datanodes 4 has reached the minimum number 0. Safe mode will be turned off automatically once the thresholds have been reached. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlockLocations(FSNamesystem.java:1937)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.getBlockLocations(NameNodeRpcServer.java:738)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.getBlockLocations(ClientNamenodeProtocolServerSideTranslatorPB.java:426)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+Caused by: org.apache.hadoop.hdfs.server.namenode.SafeModeException: Zero blocklocations for /myfile1. Name node is in safe mode.
+The reported blocks 0 needs additional 39 blocks to reach the threshold 0.9990 of total blocks 40.
+The number of live datanodes 4 has reached the minimum number 0. Safe mode will be turned off automatically once the thresholds have been reached. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1450)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlockLocations(FSNamesystem.java:1933)
+	... 11 more
+, while invoking ClientNamenodeProtocolTranslatorPB.getBlockLocations over node-1-link-0/10.10.1.4:8020. Retrying after sleeping for 21662ms.
+2019-03-27 04:42:44,929 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.RetriableException): org.apache.hadoop.hdfs.server.namenode.SafeModeException: Zero blocklocations for /myfile1. Name node is in safe mode.
+The reported blocks 0 needs additional 39 blocks to reach the threshold 0.9990 of total blocks 40.
+The number of live datanodes 4 has reached the minimum number 0. Safe mode will be turned off automatically once the thresholds have been reached. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlockLocations(FSNamesystem.java:1937)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.getBlockLocations(NameNodeRpcServer.java:738)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.getBlockLocations(ClientNamenodeProtocolServerSideTranslatorPB.java:426)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+Caused by: org.apache.hadoop.hdfs.server.namenode.SafeModeException: Zero blocklocations for /myfile1. Name node is in safe mode.
+The reported blocks 0 needs additional 39 blocks to reach the threshold 0.9990 of total blocks 40.
+The number of live datanodes 4 has reached the minimum number 0. Safe mode will be turned off automatically once the thresholds have been reached. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1450)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlockLocations(FSNamesystem.java:1933)
+	... 11 more
+, while invoking ClientNamenodeProtocolTranslatorPB.getBlockLocations over node-1-link-0/10.10.1.4:8020. Retrying after sleeping for 17456ms.
+2019-03-27 04:43:02,389 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.StandbyException): Operation category READ is not supported in state standby. Visit https://s.apache.org/sbnn-error
+	at org.apache.hadoop.hdfs.server.namenode.ha.StandbyState.checkOperation(StandbyState.java:88)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode$NameNodeHAContext.checkOperation(NameNode.java:1952)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkOperation(FSNamesystem.java:1423)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlockLocations(FSNamesystem.java:1921)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.getBlockLocations(NameNodeRpcServer.java:738)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.getBlockLocations(ClientNamenodeProtocolServerSideTranslatorPB.java:426)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+, while invoking ClientNamenodeProtocolTranslatorPB.getBlockLocations over node-1-link-0/10.10.1.4:8020. Trying to failover immediately.
+2019-03-27 04:43:02,393 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.RetriableException): org.apache.hadoop.hdfs.server.namenode.SafeModeException: Zero blocklocations for /myfile1. Name node is in safe mode.
+The reported blocks 0 needs additional 39 blocks to reach the threshold 0.9990 of total blocks 40.
+The number of live datanodes 4 has reached the minimum number 0. Safe mode will be turned off automatically once the thresholds have been reached. NamenodeHostName:node-0-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlockLocations(FSNamesystem.java:1937)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.getBlockLocations(NameNodeRpcServer.java:738)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.getBlockLocations(ClientNamenodeProtocolServerSideTranslatorPB.java:426)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+Caused by: org.apache.hadoop.hdfs.server.namenode.SafeModeException: Zero blocklocations for /myfile1. Name node is in safe mode.
+The reported blocks 0 needs additional 39 blocks to reach the threshold 0.9990 of total blocks 40.
+The number of live datanodes 4 has reached the minimum number 0. Safe mode will be turned off automatically once the thresholds have been reached. NamenodeHostName:node-0-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1450)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlockLocations(FSNamesystem.java:1933)
+	... 11 more
+, while invoking ClientNamenodeProtocolTranslatorPB.getBlockLocations over node-0-link-0/10.10.1.1:8020 after 1 failover attempts. Retrying after sleeping for 12935ms.
+2019-03-27 04:43:15,331 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - java.net.ConnectException: Call From clnode055.clemson.cloudlab.us/130.127.133.64 to node-0-link-0:8020 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused, while invoking ClientNamenodeProtocolTranslatorPB.getBlockLocations over node-0-link-0/10.10.1.1:8020 after 1 failover attempts. Trying to failover after sleeping for 1235ms.
+2019-03-27 04:43:16,571 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.RetriableException): org.apache.hadoop.hdfs.server.namenode.SafeModeException: Zero blocklocations for /myfile1. Name node is in safe mode.
+The reported blocks 0 needs additional 39 blocks to reach the threshold 0.9990 of total blocks 40.
+The number of live datanodes 4 has reached the minimum number 0. Safe mode will be turned off automatically once the thresholds have been reached. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlockLocations(FSNamesystem.java:1937)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.getBlockLocations(NameNodeRpcServer.java:738)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.getBlockLocations(ClientNamenodeProtocolServerSideTranslatorPB.java:426)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+Caused by: org.apache.hadoop.hdfs.server.namenode.SafeModeException: Zero blocklocations for /myfile1. Name node is in safe mode.
+The reported blocks 0 needs additional 39 blocks to reach the threshold 0.9990 of total blocks 40.
+The number of live datanodes 4 has reached the minimum number 0. Safe mode will be turned off automatically once the thresholds have been reached. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1450)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlockLocations(FSNamesystem.java:1933)
+	... 11 more
+, while invoking ClientNamenodeProtocolTranslatorPB.getBlockLocations over node-1-link-0/10.10.1.4:8020 after 2 failover attempts. Retrying after sleeping for 11474ms.
+2019-03-27 04:43:28,049 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.RetriableException): org.apache.hadoop.hdfs.server.namenode.SafeModeException: Zero blocklocations for /myfile1. Name node is in safe mode.
+The reported blocks 0 needs additional 39 blocks to reach the threshold 0.9990 of total blocks 40.
+The number of live datanodes 4 has reached the minimum number 0. Safe mode will be turned off automatically once the thresholds have been reached. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlockLocations(FSNamesystem.java:1937)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.getBlockLocations(NameNodeRpcServer.java:738)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.getBlockLocations(ClientNamenodeProtocolServerSideTranslatorPB.java:426)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+Caused by: org.apache.hadoop.hdfs.server.namenode.SafeModeException: Zero blocklocations for /myfile1. Name node is in safe mode.
+The reported blocks 0 needs additional 39 blocks to reach the threshold 0.9990 of total blocks 40.
+The number of live datanodes 4 has reached the minimum number 0. Safe mode will be turned off automatically once the thresholds have been reached. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1450)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlockLocations(FSNamesystem.java:1933)
+	... 11 more
+, while invoking ClientNamenodeProtocolTranslatorPB.getBlockLocations over node-1-link-0/10.10.1.4:8020 after 2 failover attempts. Retrying after sleeping for 18742ms.
+get: org.apache.hadoop.hdfs.server.namenode.SafeModeException: Zero blocklocations for /myfile1. Name node is in safe mode.
+TEST_ERROR: get failed!
+file 1 has been read from HDFS for 3 time
+diff: /root/hdfs-root/my_large_file/tmp/myfile1: No such file or directory
+diff succeed!
+rm: cannot remove '/root/hdfs-root/my_large_file/tmp/myfile1': No such file or directory
+2019-03-27 04:43:50,270 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.RetriableException): org.apache.hadoop.hdfs.server.namenode.SafeModeException: Zero blocklocations for /myfile1. Name node is in safe mode.
+The reported blocks 0 needs additional 39 blocks to reach the threshold 0.9990 of total blocks 40.
+The number of live datanodes 4 has reached the minimum number 0. Safe mode will be turned off automatically once the thresholds have been reached. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlockLocations(FSNamesystem.java:1937)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.getBlockLocations(NameNodeRpcServer.java:738)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.getBlockLocations(ClientNamenodeProtocolServerSideTranslatorPB.java:426)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+Caused by: org.apache.hadoop.hdfs.server.namenode.SafeModeException: Zero blocklocations for /myfile1. Name node is in safe mode.
+The reported blocks 0 needs additional 39 blocks to reach the threshold 0.9990 of total blocks 40.
+The number of live datanodes 4 has reached the minimum number 0. Safe mode will be turned off automatically once the thresholds have been reached. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1450)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlockLocations(FSNamesystem.java:1933)
+	... 11 more
+, while invoking ClientNamenodeProtocolTranslatorPB.getBlockLocations over node-1-link-0/10.10.1.4:8020. Retrying immediately.
+2019-03-27 04:43:50,278 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.RetriableException): org.apache.hadoop.hdfs.server.namenode.SafeModeException: Zero blocklocations for /myfile1. Name node is in safe mode.
+The reported blocks 0 needs additional 39 blocks to reach the threshold 0.9990 of total blocks 40.
+The number of live datanodes 4 has reached the minimum number 0. Safe mode will be turned off automatically once the thresholds have been reached. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlockLocations(FSNamesystem.java:1937)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.getBlockLocations(NameNodeRpcServer.java:738)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.getBlockLocations(ClientNamenodeProtocolServerSideTranslatorPB.java:426)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+Caused by: org.apache.hadoop.hdfs.server.namenode.SafeModeException: Zero blocklocations for /myfile1. Name node is in safe mode.
+The reported blocks 0 needs additional 39 blocks to reach the threshold 0.9990 of total blocks 40.
+The number of live datanodes 4 has reached the minimum number 0. Safe mode will be turned off automatically once the thresholds have been reached. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1450)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlockLocations(FSNamesystem.java:1933)
+	... 11 more
+, while invoking ClientNamenodeProtocolTranslatorPB.getBlockLocations over node-1-link-0/10.10.1.4:8020. Retrying after sleeping for 1179ms.
+2019-03-27 04:43:51,463 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.RetriableException): org.apache.hadoop.hdfs.server.namenode.SafeModeException: Zero blocklocations for /myfile1. Name node is in safe mode.
+The reported blocks 0 needs additional 39 blocks to reach the threshold 0.9990 of total blocks 40.
+The number of live datanodes 4 has reached the minimum number 0. Safe mode will be turned off automatically once the thresholds have been reached. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlockLocations(FSNamesystem.java:1937)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.getBlockLocations(NameNodeRpcServer.java:738)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.getBlockLocations(ClientNamenodeProtocolServerSideTranslatorPB.java:426)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+Caused by: org.apache.hadoop.hdfs.server.namenode.SafeModeException: Zero blocklocations for /myfile1. Name node is in safe mode.
+The reported blocks 0 needs additional 39 blocks to reach the threshold 0.9990 of total blocks 40.
+The number of live datanodes 4 has reached the minimum number 0. Safe mode will be turned off automatically once the thresholds have been reached. NamenodeHostName:node-1-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1450)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlockLocations(FSNamesystem.java:1933)
+	... 11 more
+, while invoking ClientNamenodeProtocolTranslatorPB.getBlockLocations over node-1-link-0/10.10.1.4:8020. Retrying after sleeping for 2585ms.
