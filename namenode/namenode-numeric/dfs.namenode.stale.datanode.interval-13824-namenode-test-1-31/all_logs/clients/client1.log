@@ -1,0 +1,155 @@
+Found 5 items
+-rw-r--r--   3 root supergroup 1073741824 2019-03-27 03:47 /myfile1
+-rw-r--r--   3 root supergroup 1073741824 2019-03-27 03:47 /myfile2
+-rw-r--r--   3 root supergroup 1073741824 2019-03-27 03:47 /myfile3
+-rw-r--r--   3 root supergroup 1073741824 2019-03-27 03:47 /myfile4
+-rw-r--r--   3 root supergroup 1073741824 2019-03-27 03:47 /myfile5
+file 1 has been put into HDFS
+file 1 has been read from HDFS for 1 time
+diff succeed!
+file 1 has been read from HDFS for 2 time
+diff succeed!
+file 1 has been read from HDFS for 3 time
+diff succeed!
+file 1 has been read from HDFS for 4 time
+diff succeed!
+file 1 has been read from HDFS for 5 time
+diff succeed!
+file 1 has been read from HDFS for 6 time
+diff succeed!
+file 1 has been read from HDFS for 7 time
+diff succeed!
+file 1 has been read from HDFS for 8 time
+diff succeed!
+file 1 has been read from HDFS for 9 time
+diff succeed!
+file 1 has been read from HDFS for 10 time
+diff succeed!
+2019-03-27 03:50:34,483 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.RetriableException): org.apache.hadoop.hdfs.server.namenode.SafeModeException: Cannot delete /myfile1. Name node is in safe mode.
+The reported blocks 40 has reached the threshold 0.9990 of total blocks 40. The number of live datanodes 4 has reached the minimum number 0. In safe mode extension. Safe mode will be turned off automatically in 18 seconds. NamenodeHostName:node-0-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1441)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.delete(FSNamesystem.java:2986)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.delete(NameNodeRpcServer.java:1095)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.delete(ClientNamenodeProtocolServerSideTranslatorPB.java:692)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+Caused by: org.apache.hadoop.hdfs.server.namenode.SafeModeException: Cannot delete /myfile1. Name node is in safe mode.
+The reported blocks 40 has reached the threshold 0.9990 of total blocks 40. The number of live datanodes 4 has reached the minimum number 0. In safe mode extension. Safe mode will be turned off automatically in 18 seconds. NamenodeHostName:node-0-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1450)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1437)
+	... 12 more
+, while invoking ClientNamenodeProtocolTranslatorPB.delete over node-0-link-0/10.10.1.1:8020. Retrying immediately.
+2019-03-27 03:50:34,492 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.RetriableException): org.apache.hadoop.hdfs.server.namenode.SafeModeException: Cannot delete /myfile1. Name node is in safe mode.
+The reported blocks 40 has reached the threshold 0.9990 of total blocks 40. The number of live datanodes 4 has reached the minimum number 0. In safe mode extension. Safe mode will be turned off automatically in 18 seconds. NamenodeHostName:node-0-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1441)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.delete(FSNamesystem.java:2986)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.delete(NameNodeRpcServer.java:1095)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.delete(ClientNamenodeProtocolServerSideTranslatorPB.java:692)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+Caused by: org.apache.hadoop.hdfs.server.namenode.SafeModeException: Cannot delete /myfile1. Name node is in safe mode.
+The reported blocks 40 has reached the threshold 0.9990 of total blocks 40. The number of live datanodes 4 has reached the minimum number 0. In safe mode extension. Safe mode will be turned off automatically in 18 seconds. NamenodeHostName:node-0-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1450)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1437)
+	... 12 more
+, while invoking ClientNamenodeProtocolTranslatorPB.delete over node-0-link-0/10.10.1.1:8020. Retrying after sleeping for 654ms.
+2019-03-27 03:50:35,152 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.RetriableException): org.apache.hadoop.hdfs.server.namenode.SafeModeException: Cannot delete /myfile1. Name node is in safe mode.
+The reported blocks 40 has reached the threshold 0.9990 of total blocks 40. The number of live datanodes 4 has reached the minimum number 0. In safe mode extension. Safe mode will be turned off automatically in 17 seconds. NamenodeHostName:node-0-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1441)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.delete(FSNamesystem.java:2986)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.delete(NameNodeRpcServer.java:1095)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.delete(ClientNamenodeProtocolServerSideTranslatorPB.java:692)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+Caused by: org.apache.hadoop.hdfs.server.namenode.SafeModeException: Cannot delete /myfile1. Name node is in safe mode.
+The reported blocks 40 has reached the threshold 0.9990 of total blocks 40. The number of live datanodes 4 has reached the minimum number 0. In safe mode extension. Safe mode will be turned off automatically in 17 seconds. NamenodeHostName:node-0-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1450)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1437)
+	... 12 more
+, while invoking ClientNamenodeProtocolTranslatorPB.delete over node-0-link-0/10.10.1.1:8020. Retrying after sleeping for 1267ms.
+2019-03-27 03:50:36,422 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.RetriableException): org.apache.hadoop.hdfs.server.namenode.SafeModeException: Cannot delete /myfile1. Name node is in safe mode.
+The reported blocks 40 has reached the threshold 0.9990 of total blocks 40. The number of live datanodes 4 has reached the minimum number 0. In safe mode extension. Safe mode will be turned off automatically in 16 seconds. NamenodeHostName:node-0-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1441)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.delete(FSNamesystem.java:2986)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.delete(NameNodeRpcServer.java:1095)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.delete(ClientNamenodeProtocolServerSideTranslatorPB.java:692)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+Caused by: org.apache.hadoop.hdfs.server.namenode.SafeModeException: Cannot delete /myfile1. Name node is in safe mode.
+The reported blocks 40 has reached the threshold 0.9990 of total blocks 40. The number of live datanodes 4 has reached the minimum number 0. In safe mode extension. Safe mode will be turned off automatically in 16 seconds. NamenodeHostName:node-0-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1450)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1437)
+	... 12 more
+, while invoking ClientNamenodeProtocolTranslatorPB.delete over node-0-link-0/10.10.1.1:8020. Retrying after sleeping for 4306ms.
+2019-03-27 03:50:40,731 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.RetriableException): org.apache.hadoop.hdfs.server.namenode.SafeModeException: Cannot delete /myfile1. Name node is in safe mode.
+The reported blocks 40 has reached the threshold 0.9990 of total blocks 40. The number of live datanodes 4 has reached the minimum number 0. In safe mode extension. Safe mode will be turned off automatically in 11 seconds. NamenodeHostName:node-0-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1441)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.delete(FSNamesystem.java:2986)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.delete(NameNodeRpcServer.java:1095)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.delete(ClientNamenodeProtocolServerSideTranslatorPB.java:692)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+Caused by: org.apache.hadoop.hdfs.server.namenode.SafeModeException: Cannot delete /myfile1. Name node is in safe mode.
+The reported blocks 40 has reached the threshold 0.9990 of total blocks 40. The number of live datanodes 4 has reached the minimum number 0. In safe mode extension. Safe mode will be turned off automatically in 11 seconds. NamenodeHostName:node-0-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1450)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1437)
+	... 12 more
+, while invoking ClientNamenodeProtocolTranslatorPB.delete over node-0-link-0/10.10.1.1:8020. Retrying after sleeping for 5632ms.
+2019-03-27 03:50:46,366 INFO  retry.RetryInvocationHandler RetryInvocationHandler.java:log:411 - org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.RetriableException): org.apache.hadoop.hdfs.server.namenode.SafeModeException: Cannot delete /myfile1. Name node is in safe mode.
+The reported blocks 40 has reached the threshold 0.9990 of total blocks 40. The number of live datanodes 4 has reached the minimum number 0. In safe mode extension. Safe mode will be turned off automatically in 6 seconds. NamenodeHostName:node-0-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1441)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.delete(FSNamesystem.java:2986)
+	at org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.delete(NameNodeRpcServer.java:1095)
+	at org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.delete(ClientNamenodeProtocolServerSideTranslatorPB.java:692)
+	at org.apache.hadoop.hdfs.protocol.proto.ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2.callBlockingMethod(ClientNamenodeProtocolProtos.java)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(ProtobufRpcEngine.java:523)
+	at org.apache.hadoop.ipc.RPC$Server.call(RPC.java:991)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:872)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:818)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1729)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2678)
+Caused by: org.apache.hadoop.hdfs.server.namenode.SafeModeException: Cannot delete /myfile1. Name node is in safe mode.
+The reported blocks 40 has reached the threshold 0.9990 of total blocks 40. The number of live datanodes 4 has reached the minimum number 0. In safe mode extension. Safe mode will be turned off automatically in 6 seconds. NamenodeHostName:node-0-link-0
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newSafemodeException(FSNamesystem.java:1450)
+	at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1437)
+	... 12 more
+, while invoking ClientNamenodeProtocolTranslatorPB.delete over node-0-link-0/10.10.1.1:8020. Retrying after sleeping for 10062ms.
+Deleted /myfile1
+file 1 has been removed from HDFS
