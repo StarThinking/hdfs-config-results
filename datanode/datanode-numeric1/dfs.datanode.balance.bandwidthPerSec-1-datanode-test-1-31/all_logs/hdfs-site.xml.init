@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+   contributor license agreements.  See the NOTICE file distributed with
+   this work for additional information regarding copyright ownership.
+   The ASF licenses this file to You under the Apache License, Version 2.0
+   (the "License"); you may not use this file except in compliance with
+   the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+
+<!-- Do not modify this file directly.  Instead, copy entries that you -->
+<!-- wish to modify from this file into hdfs-site.xml and change them -->
+<!-- there.  If hdfs-site.xml does not already exist, create it.      -->
+
+<configuration>
+
+<!-- Sixiang Ma Configuration for Automatic Failover-->
+
+<property>
+  <name>dfs.replication</name>
+  <value>3</value>
+</property>
+
+<property>
+  <name>hadoop.hdfs.configuration.version</name>
+  <value>1</value>
+  <description>version of this configuration file</description>
+</property>
+
+<property>
+  <name>dfs.data.dir</name>
+  <value>/root/hdfs-root/data</value>
+</property>
+
+<property>
+  <name>dfs.nameservices</name>
+  <value>mycluster</value>
+  <description>
+    Comma-separated list of nameservices.
+  </description>
+</property>
+
+<property>
+  <name>dfs.ha.namenodes.mycluster</name>
+  <value>nn1,nn2</value>
+  <description>
+    The prefix for a given nameservice, contains a comma-separated
+    list of namenodes for a given nameservice (eg EXAMPLENAMESERVICE).
+
+    Unique identifiers for each NameNode in the nameservice, delimited by
+    commas. This will be used by DataNodes to determine all the NameNodes
+    in the cluster. For example, if you used “mycluster” as the nameservice
+    ID previously, and you wanted to use “nn1” and “nn2” as the individual
+    IDs of the NameNodes, you would configure a property
+    dfs.ha.namenodes.mycluster, and its value "nn1,nn2".
+  </description>
+</property>
+
+<property>
+  <name>dfs.namenode.rpc-address.mycluster.nn1</name>
+  <value>node-0-link-0:8020</value>
+  <description>
+    RPC address that handles all clients requests. In the case of HA/Federation where multiple namenodes exist,
+    the name service id is added to the name e.g. dfs.namenode.rpc-address.ns1
+    dfs.namenode.rpc-address.EXAMPLENAMESERVICE
+    The value of this property will take the form of nn-host1:rpc-port. The NameNode's default RPC port is 8020.
+  </description>
+</property>
+
+<property>
+  <name>dfs.namenode.rpc-address.mycluster.nn2</name>
+  <value>node-1-link-0:8020</value>
+  <description>
+    RPC address that handles all clients requests. In the case of HA/Federation where multiple namenodes exist,
+    the name service id is added to the name e.g. dfs.namenode.rpc-address.ns1
+    dfs.namenode.rpc-address.EXAMPLENAMESERVICE
+    The value of this property will take the form of nn-host1:rpc-port. The NameNode's default RPC port is 8020.
+  </description>
+</property>
+
+<property>
+  <name>dfs.namenode.http-address.mycluster.nn1</name>
+  <value>node-0-link-0:9870</value>
+  <description>
+    The address and the base port where the dfs namenode web ui will listen on.
+  </description>
+</property>
+
+<property>
+  <name>dfs.namenode.http-address.mycluster.nn2</name>
+  <value>node-1-link-0:9870</value>
+  <description>
+    The address and the base port where the dfs namenode web ui will listen on.
+  </description>
+</property>
+
+<property>
+  <name>dfs.namenode.shared.edits.dir</name>
+  <value>qjournal://node-2-link-0:8485;node-3-link-0:8485;node-4-link-0:8485/mycluster</value>
+  <description>A directory on shared storage between the multiple namenodes
+  in an HA cluster. This directory will be written by the active and read
+  by the standby in order to keep the namespaces synchronized. This directory
+  does not need to be listed in dfs.namenode.edits.dir above. It should be
+  left empty in a non-HA cluster.
+  </description>
+</property>
+
+<property>
+  <name>dfs.client.failover.proxy.provider.mycluster</name>
+  <value>org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider</value>
+  <description>
+    The prefix (plus a required nameservice ID) for the class name of the
+    configured Failover proxy provider for the host.  For more detailed
+    information, please consult the "Configuration Details" section of
+    the HDFS High Availability documentation.
+  </description>
+</property>
+
+<property>
+  <name>dfs.ha.fencing.methods</name>
+  <value>sshfence</value>
+  <description>
+    A list of scripts or Java classes which will be used to fence
+    the Active NameNode during a failover.  See the HDFS High
+    Availability documentation for details on automatic HA
+    configuration.
+  </description>
+</property>
+
+<property>
+  <name>dfs.ha.fencing.ssh.private-key-files</name>
+  <value>/root/.ssh/id_rsa</value>
+</property>
+
+<property>
+  <name>dfs.journalnode.edits.dir</name>
+  <value>/root/hdfs-root/journal</value>
+  <description>
+    The directory where the journal edit files are stored.
+  </description>
+</property>
+
+<property>
+  <name>dfs.ha.automatic-failover.enabled</name>
+  <value>true</value>
+  <description>
+    Whether automatic failover is enabled. See the HDFS High
+    Availability documentation for details on automatic HA
+    configuration.
+  </description>
+</property>
+
+<!-- Sixiang Ma Configuration for Automatic Failover-->
+<property>
+  <name>dfs.datanode.balance.bandwidthPerSec</name>
+  <value>1</value>
+</property>
+
+</configuration>
