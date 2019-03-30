@@ -1,0 +1,44 @@
+2019-03-28 05:18:18,476 WARN  hdfs.DataStreamer DataStreamer.java:run:826 - DataStreamer Exception
+java.io.IOException: Broken pipe
+	at sun.nio.ch.FileDispatcherImpl.write0(Native Method)
+	at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:47)
+	at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:93)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:65)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:471)
+	at org.apache.hadoop.net.SocketOutputStream$Writer.performIO(SocketOutputStream.java:63)
+	at org.apache.hadoop.net.SocketIOWithTimeout.doIO(SocketIOWithTimeout.java:142)
+	at org.apache.hadoop.net.SocketOutputStream.write(SocketOutputStream.java:159)
+	at org.apache.hadoop.net.SocketOutputStream.write(SocketOutputStream.java:117)
+	at java.io.BufferedOutputStream.write(BufferedOutputStream.java:122)
+	at java.io.DataOutputStream.write(DataOutputStream.java:107)
+	at org.apache.hadoop.hdfs.DFSPacket.writeTo(DFSPacket.java:194)
+	at org.apache.hadoop.hdfs.DataStreamer.run(DataStreamer.java:774)
+2019-03-28 05:18:18,476 WARN  hdfs.DataStreamer DataStreamer.java:run:1196 - Exception for BP-1098605362-130.127.133.65-1553771789999:blk_1073741861_1039
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.apache.hadoop.net.SocketInputStream$Reader.performIO(SocketInputStream.java:57)
+	at org.apache.hadoop.net.SocketIOWithTimeout.doIO(SocketIOWithTimeout.java:142)
+	at org.apache.hadoop.net.SocketInputStream.read(SocketInputStream.java:161)
+	at org.apache.hadoop.net.SocketInputStream.read(SocketInputStream.java:131)
+	at org.apache.hadoop.net.SocketInputStream.read(SocketInputStream.java:118)
+	at java.io.FilterInputStream.read(FilterInputStream.java:83)
+	at java.io.FilterInputStream.read(FilterInputStream.java:83)
+	at org.apache.hadoop.hdfs.protocolPB.PBHelperClient.vintPrefixed(PBHelperClient.java:547)
+	at org.apache.hadoop.hdfs.protocol.datatransfer.PipelineAck.readFields(PipelineAck.java:213)
+	at org.apache.hadoop.hdfs.DataStreamer$ResponseProcessor.run(DataStreamer.java:1086)
+2019-03-28 05:18:18,485 WARN  hdfs.DataStreamer DataStreamer.java:handleBadDatanode:1571 - Error Recovery for BP-1098605362-130.127.133.65-1553771789999:blk_1073741861_1039 in pipeline [DatanodeInfoWithStorage[10.10.1.6:9866,DS-211f0830-dd64-41dc-bfe7-fed83a828005,DISK], DatanodeInfoWithStorage[10.10.1.3:9866,DS-1292d446-e28b-41eb-b730-29d7621973d1,DISK], DatanodeInfoWithStorage[10.10.1.2:9866,DS-29a85355-c254-47a0-9897-50812edbb03d,DISK]]: datanode 0(DatanodeInfoWithStorage[10.10.1.6:9866,DS-211f0830-dd64-41dc-bfe7-fed83a828005,DISK]) is bad.
+Found 5 items
+-rw-r--r--   3 root supergroup 1073741824 2019-03-28 05:18 /myfile1
+-rw-r--r--   3 root supergroup 1073741824 2019-03-28 05:18 /myfile2
+-rw-r--r--   3 root supergroup 1073741824 2019-03-28 05:18 /myfile3
+-rw-r--r--   3 root supergroup 1073741824 2019-03-28 05:18 /myfile4
+-rw-r--r--   3 root supergroup 1073741824 2019-03-28 05:18 /myfile5
+file 5 has been put into HDFS
+file 5 has been read from HDFS for 1 time
+diff succeed!
+file 5 has been read from HDFS for 2 time
+diff succeed!
